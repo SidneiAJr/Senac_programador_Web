@@ -11,6 +11,7 @@
 4) Desenhe um mapa simples de arquitetura da informação (pode ser no papel, no Figma ou até usando uma ferramenta online como Miro ou Lucidchart).
 
 
+## Respostas:
 
 1) Site voltado para publico Streaming, Nteflix amazon.
 
