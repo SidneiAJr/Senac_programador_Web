@@ -17,5 +17,3 @@
 2) Todos os publicos de 5 a 99 Anos, ter internet.
 
 3) Objetivo: Ver series e filmes, funcionalidades ver series e videos, publico em geral, concorrentes, Netflix, Amazon.
-
-4) 
