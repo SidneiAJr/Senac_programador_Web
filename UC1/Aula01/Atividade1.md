@@ -1,7 +1,7 @@
 ## Exercício Prático – Pesquisa e Planejamento
 👉 Escolha um negócio real da região (pode ser uma pizzaria, mercado, salão de beleza, pet shop, academia, etc.).
 
-Tarefa:
+## Tarefa:
 1) Faça uma análise de mercado: quem são os concorrentes locais e online?
 
 2) Defina o público-alvo: descreva idade, perfil e necessidades.
@@ -12,3 +12,10 @@ Tarefa:
 
 
 
+1) Site voltado para publico Streaming, Nteflix amazon.
+
+2) Todos os publicos de 5 a 99 Anos, ter internet.
+
+3) Objetivo: Ver series e filmes, funcionalidades ver series e videos, publico em geral, concorrentes, Netflix, Amazon.
+
+4) 
