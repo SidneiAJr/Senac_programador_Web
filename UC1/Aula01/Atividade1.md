@@ -19,4 +19,6 @@
 
 3) Objetivo: Ver series e filmes, funcionalidades ver series e videos, publico em geral, concorrentes, Netflix, Amazon.
 
+4) Imagem Solicitada:
+
 ![Imagem Projeto Stream](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/UC1/Aula01/3.png)
