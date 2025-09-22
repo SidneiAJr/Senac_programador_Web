@@ -18,3 +18,5 @@
 2) Todos os publicos de 5 a 99 Anos, ter internet.
 
 3) Objetivo: Ver series e filmes, funcionalidades ver series e videos, publico em geral, concorrentes, Netflix, Amazon.
+
+![Imagem Projeto Stream](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/UC1/Aula01/3.png)
