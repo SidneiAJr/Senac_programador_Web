@@ -12,6 +12,7 @@
 
 
 ## Respostas:
+### Nome do Projeto: Serie dos guri
 
 1) Site voltado para publico Streaming, Netflix amazon.
 
