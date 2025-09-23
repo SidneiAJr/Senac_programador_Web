@@ -21,7 +21,7 @@
 
 ## Resposta:
 
-1)Levantamento de Requesitos(Sitema de Streaming)
+### 1)Levantamento de Requesitos(Sitema de Streaming)
 
 - Requesito Funciona:
 - Tela de Login, Tela de cadastro, Sistema de Pagamento, Menu, Histortico e etcs.
@@ -29,20 +29,20 @@
 - Requesito Não Funcional:
 - Desempenho,Escalabilidade,Segurança
 
-2) Especifique 3 requisitos não funcionais críticos para seu projeto
+### 2) Especifique 3 requisitos não funcionais críticos para seu projeto
 - Desempenho,Escalabilidade,Segurança.
 
-3) Classifique cada RF com nível de complexidade (baixa/média/alta)
+### 3) Classifique cada RF com nível de complexidade (baixa/média/alta)
 - Alta: Sistema de Pagamento, Tela de Cadastro
 - Media: Historico
 - Baixa: Pagina Inicial
 
-4) Escreva 3 histórias de usuário com critérios de aceitação completos
+### 4) Escreva 3 histórias de usuário com critérios de aceitação completos
 - Como usuário registrado,Eu quero fazer login no sistema.
 - Como novo usuário,Eu quero criar uma conta no serviço de streaming.
 - Como usuário autenticado,Eu quero assistir a filmes e séries.
 
-5) Identifique para cada história: persona envolvida e valor gerado
+### 5) Identifique para cada história: persona envolvida e valor gerado
 - Persona Envolvida:
 Nome: João
 Idade: 28 anos
@@ -56,9 +56,9 @@ Nome: Carlos
 Idade: 42 anos
 Perfil: Carlos é um entusiasta de tecnologia e entretenimento. Ele está acostumado a consumir conteúdo em alta definição e valoriza uma experiência personalizada e sem interrupções. Ele tem uma boa conexão de internet e prefere a melhor qualidade visual possível.
 
-6) Esboce o wireframe da página principal (papel ou digital)[Imagem Projeto](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/Introdu%C3%A7%C3%A3o/Aula02/teste%20de%20tela.png)
+### 6) Esboce o wireframe da página principal (papel ou digital)[Imagem Projeto](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/Introdu%C3%A7%C3%A3o/Aula02/teste%20de%20tela.png)
 
-8) Inclua anotações sobre interações importantes
+### 8) Inclua anotações sobre interações importantes
 - Tela de Login e Cadastro:
 - Botões de Login e Cadastro:
 - Recuperação de Senha:
@@ -66,7 +66,7 @@ Perfil: Carlos é um entusiasta de tecnologia e entretenimento. Ele está acostu
 - Menu Suspenso:
 - Categorias:
 
-10) Pense na jornada do usuário a partir dessa tela
+### 10) Pense na jornada do usuário a partir dessa tela
 - Tela Inicial (Página Principal):
 - Login ou Cadastro:
 - Cadastro:
