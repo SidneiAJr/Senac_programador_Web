@@ -59,10 +59,18 @@ Perfil: Carlos é um entusiasta de tecnologia e entretenimento. Ele está acostu
 6) Esboce o wireframe da página principal (papel ou digital)[Imagem Projeto](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/Introdu%C3%A7%C3%A3o/Aula02/teste%20de%20tela.png)
 
 8) Inclua anotações sobre interações importantes
-- Tela de Login e Cadastro: Botões de Login e Cadastro:
+- Tela de Login e Cadastro:
+- Botões de Login e Cadastro:
 - Recuperação de Senha:
 - Validação de Campos:
 - Menu Suspenso:
 - Categorias:
 
 10) Pense na jornada do usuário a partir dessa tela
+- Tela Inicial (Página Principal):
+- Login ou Cadastro:
+- Cadastro:
+- Navegação pelo Conteúdo:
+- Assistir a um Conteúdo:
+- Seleção do Conteúdo:
+- Interação no Player de Vídeo:
