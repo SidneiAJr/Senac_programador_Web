@@ -17,7 +17,7 @@
   
 - Inclua anotações sobre interações importantes
   
--Pense na jornada do usuário a partir dessa tela
+- Pense na jornada do usuário a partir dessa tela
 
 ## Resposta:
 
@@ -41,3 +41,19 @@
 - Como usuário registrado,Eu quero fazer login no sistema.
 - Como novo usuário,Eu quero criar uma conta no serviço de streaming.
 - Como usuário autenticado,Eu quero assistir a filmes e séries.
+
+5)Identifique para cada história: persona envolvida e valor gerado
+- Persona Envolvida:
+Nome: João
+Idade: 28 anos
+Perfil: João é um usuário frequente de serviços de streaming. Ele já tem experiência com várias plataformas, portanto, ele valoriza a facilidade de login e a segurança.
+- Persona Envolvida:
+Nome: Maria
+Idade: 35 anos
+Perfil: Maria é uma usuária nova em serviços de streaming. Ela não tem muita experiência com plataformas digitais e procura algo simples e intuitivo. Ela é cuidadosa com a segurança online e deseja uma plataforma fácil de usar.
+- Persona Envolvida:
+Nome: Carlos
+Idade: 42 anos
+Perfil: Carlos é um entusiasta de tecnologia e entretenimento. Ele está acostumado a consumir conteúdo em alta definição e valoriza uma experiência personalizada e sem interrupções. Ele tem uma boa conexão de internet e prefere a melhor qualidade visual possível.
+
+6)
