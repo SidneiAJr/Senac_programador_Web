@@ -41,7 +41,7 @@
 - Como cliente frequente,
 Eu quero criar listas de compras salvas,
 Para que eu possa agilizar minhas compras recorrentes e ter fácil acesso aos produtos que compro regularmente.
-- História de Usuário 2: Login de Usuário
+- Login de Usuário
 Como usuário registrado,
 Eu quero fazer login no sistema,
 Para que eu possa acessar minha conta e realizar minhas compras ou interagir com minhas listas de compras.
