@@ -28,3 +28,16 @@
 
 - Requesito Não Funcional:
 - Desempenho,Escalabilidade,Segurança
+
+2) Especifique 3 requisitos não funcionais críticos para seu projeto
+- Desempenho,Escalabilidade,Segurança.
+
+3) Classifique cada RF com nível de complexidade (baixa/média/alta)
+- Alta: Sistema de Pagamento, Tela de Cadastro
+- Media: Historico
+- Baixa: Pagina Inicial
+
+4) Escreva 3 histórias de usuário com critérios de aceitação completos
+- Como usuário registrado,Eu quero fazer login no sistema.
+- Como novo usuário,Eu quero criar uma conta no serviço de streaming.
+- Como usuário autenticado,Eu quero assistir a filmes e séries.
