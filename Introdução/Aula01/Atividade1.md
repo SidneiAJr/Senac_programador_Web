@@ -13,7 +13,7 @@
 
 ## Respostas:
 
-1) Site voltado para publico Streaming, Nteflix amazon.
+1) Site voltado para publico Streaming, Netflix amazon.
 
 2) Todos os publicos de 5 a 99 Anos, ter internet.
 
