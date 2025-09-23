@@ -42,7 +42,7 @@
 - Como novo usuário,Eu quero criar uma conta no serviço de streaming.
 - Como usuário autenticado,Eu quero assistir a filmes e séries.
 
-5)Identifique para cada história: persona envolvida e valor gerado
+5) Identifique para cada história: persona envolvida e valor gerado
 - Persona Envolvida:
 Nome: João
 Idade: 28 anos
@@ -56,4 +56,8 @@ Nome: Carlos
 Idade: 42 anos
 Perfil: Carlos é um entusiasta de tecnologia e entretenimento. Ele está acostumado a consumir conteúdo em alta definição e valoriza uma experiência personalizada e sem interrupções. Ele tem uma boa conexão de internet e prefere a melhor qualidade visual possível.
 
-6)
+6) Esboce o wireframe da página principal (papel ou digital)
+
+7) Inclua anotações sobre interações importantes
+
+8) Pense na jornada do usuário a partir dessa tela
