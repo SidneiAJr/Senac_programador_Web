@@ -57,7 +57,8 @@ Idade: 42 anos
 Perfil: Carlos é um entusiasta de tecnologia e entretenimento. Ele está acostumado a consumir conteúdo em alta definição e valoriza uma experiência personalizada e sem interrupções. Ele tem uma boa conexão de internet e prefere a melhor qualidade visual possível.
 
 6) Esboce o wireframe da página principal (papel ou digital)
+[Imagem Projeto Stream]()
 
-7) Inclua anotações sobre interações importantes
+8) Inclua anotações sobre interações importantes
 
-8) Pense na jornada do usuário a partir dessa tela
+9) Pense na jornada do usuário a partir dessa tela
