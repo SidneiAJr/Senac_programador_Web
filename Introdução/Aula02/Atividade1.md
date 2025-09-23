@@ -21,4 +21,10 @@
 
 ## Resposta:
 
-1)RF 
+1)Levantamento de Requesitos(Sitema de Streaming)
+
+- Requesito Funciona:
+- Tela de Login, Tela de cadastro, Sistema de Pagamento, Menu, Histortico e etcs.
+
+- Requesito Não Funcional:
+- Desempenho,Escalabilidade,Segurança
