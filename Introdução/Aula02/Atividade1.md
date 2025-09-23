@@ -38,9 +38,16 @@
 - Baixa: Pagina Inicial
 
 ### 4) Escreva 3 histórias de usuário com critérios de aceitação completos
-- Como usuário registrado,Eu quero fazer login no sistema.
-- Como novo usuário,Eu quero criar uma conta no serviço de streaming.
-- Como usuário autenticado,Eu quero assistir a filmes e séries.
+- Como cliente frequente,
+Eu quero criar listas de compras salvas,
+Para que eu possa agilizar minhas compras recorrentes e ter fácil acesso aos produtos que compro regularmente.
+- História de Usuário 2: Login de Usuário
+Como usuário registrado,
+Eu quero fazer login no sistema,
+Para que eu possa acessar minha conta e realizar minhas compras ou interagir com minhas listas de compras.
+- Como novo usuário,
+Eu quero criar uma conta no serviço de streaming,
+Para que eu possa acessar o conteúdo exclusivo e criar minha experiência personalizada.
 
 ### 5) Identifique para cada história: persona envolvida e valor gerado
 - Persona Envolvida:
