@@ -63,7 +63,9 @@ Nome: Carlos
 Idade: 42 anos
 Perfil: Carlos é um entusiasta de tecnologia e entretenimento. Ele está acostumado a consumir conteúdo em alta definição e valoriza uma experiência personalizada e sem interrupções. Ele tem uma boa conexão de internet e prefere a melhor qualidade visual possível.
 
-### 6) Esboce o wireframe da página principal (papel ou digital)[Imagem Projeto](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/Introdu%C3%A7%C3%A3o/Aula02/teste%20de%20tela.png)
+### 6) Esboce o wireframe da página principal (papel ou digital)
+[Imagem Projeto](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/Introdu%C3%A7%C3%A3o/Aula02/teste%20de%20tela.png)
+[Imagem Projeto](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/Introdu%C3%A7%C3%A3o/Aula02/6.png)
 
 ### 8) Inclua anotações sobre interações importantes
 - Tela de Login e Cadastro:
