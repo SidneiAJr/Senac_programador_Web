@@ -12,7 +12,7 @@
 
 
 ## Respostas:
-### Nome do Projeto: Serie dos guri
+### Nome do Projeto: Serium
 
 1) Site voltado para publico Streaming, Netflix amazon.
 
