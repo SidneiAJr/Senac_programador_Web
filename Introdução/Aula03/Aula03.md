@@ -1,4 +1,4 @@
-### 🧪 Atividade Prática
+## 🧪 Atividade Prática
 Crie seu próprio quadro Kanban no Trello
 Tema sugerido: Site Pessoal ou App de Lista de Compras
 
@@ -7,4 +7,7 @@ Adicione pelo menos 6 tarefas em forma de cartões
 Aplique etiquetas, checklists e prazos
 Mova os cartões conforme for “executando”
 (Opcional) Compartilhe o link com a turma!
+
+![Texto Alternativo](URL ou Caminho da Imagem)
+
 
