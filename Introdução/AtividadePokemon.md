@@ -2,7 +2,7 @@
 
 ## Atividade Para treinar comando no console.
 
-**Testando Console**
+**Procurando Pokemon - Console**
 
 ## Lista com 100 Pokemons
 
@@ -23,4 +23,4 @@
 ![Pikachu](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/Img/1.png)
 
 ## Pikachu 2
-![Pikachu2](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/Img/8.png)
+![Pikachu2](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/Img/aa.png)
