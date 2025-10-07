@@ -1,6 +1,8 @@
-<img src="https://github.com/SidneiAJr/Senac_programador_Web/blob/main/PI/Projeto_final_Planetarium/img/logo.png" alt="Logo Projeto" width="300" style="display: block; margin-left: auto; margin-right: auto;"/>
+<div style="text-align: center;">
+  <img src="https://github.com/SidneiAJr/Senac_programador_Web/blob/main/PI/Projeto_final_Planetarium/img/logo.png" alt="Logo Projeto" width="300"/>
+</div>
 
-# Documentação Planetarium:
+# Documentação Planetarium
 
 ### O Planetarium é um software web dedicado a realizar simulações planetárias com base em cálculos simplificados.
 
@@ -8,7 +10,7 @@
 
 ### Objetivos do Projeto
 
-- Esse projeto e um projeto educativo.
+- Esse projeto é educativo.
 - Simulações planetárias: Realizar simulações de movimento planetário usando cálculos simplificados.
 - Educação: Facilitar o aprendizado de astronomia e física de forma prática e interativa.
 
@@ -18,5 +20,4 @@
 
 ## 🚧 Status Atual
 
-- Projeto esta em fase inicial
-
+- O projeto está em fase inicial.
