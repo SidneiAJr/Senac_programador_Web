@@ -12,5 +12,11 @@
 - Simulações planetárias: Realizar simulações de movimento planetário usando cálculos simplificados.
 - Educação: Facilitar o aprendizado de astronomia e física de forma prática e interativa.
 
+### Tecnologias Utilizadas
 
+- HTML, CSS, JS
+
+## 🚧 Status Atual
+
+- Projeto esta em fase inicial
 
