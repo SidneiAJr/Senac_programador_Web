@@ -4,8 +4,6 @@
 
 ### O Planetarium é um software web dedicado a realizar simulações planetárias com base em cálculos simplificados.
 
-***No Momento esta somente HTML CSS JS***
-
 - O Planetarium foi desenvolvido como uma ferramenta educativa que permite visualizar e simular o movimento dos planetas.
 
 ### Objetivos do Projeto
