@@ -2,7 +2,7 @@
 
 # Bem Vindo ao Documentação do Planetarium:
 
-## O Planetarium é um software web dedicado a realizar simulações planetárias com base em cálculos simplificados.
+### O Planetarium é um software web dedicado a realizar simulações planetárias com base em cálculos simplificados.
 
 ***No Momento esta somente HTML CSS JS***
 
