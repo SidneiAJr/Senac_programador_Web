@@ -1,6 +1,4 @@
-<div style="text-align: center;">
-  <img src="https://github.com/SidneiAJr/Senac_programador_Web/blob/main/PI/Projeto_final_Planetarium/img/logo.png" alt="Logo Projeto" width="300"/>
-</div>
+<img src="https://github.com/SidneiAJr/Senac_programador_Web/blob/main/PI/Projeto_final_Planetarium/img/logo.png" alt="Logo Projeto" width="300" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 # Documentação Planetarium:
 
