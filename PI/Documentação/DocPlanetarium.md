@@ -2,7 +2,7 @@
   <img src="https://github.com/SidneiAJr/Senac_programador_Web/blob/main/PI/Projeto_final_Planetarium/img/logo.png" alt="Logo Projeto" width="300"/>
 </div>
 
-# Documentação Planetarium
+# 🪐Documentação Planetarium
 
 ### O Planetarium é um software web dedicado a realizar simulações planetárias com base em cálculos simplificados.
 
