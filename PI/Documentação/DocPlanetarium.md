@@ -2,9 +2,17 @@
 
 # Bem Vindo ao Documentação do Planetarium:
 
-### Esse Software foi pensando para fazer simulações Planetarias baseadas em calculos simplificados.
+## O Planetarium é um software web dedicado a realizar simulações planetárias com base em cálculos simplificados.
 
 ***No Momento esta somente HTML CSS JS***
 
-- Esse projeto visa Ajuda e realizar simulações de Planetas.
+- O Planetarium foi desenvolvido como uma ferramenta educativa que permite visualizar e simular o movimento dos planetas.
+
+### Objetivos do Projeto
+
+- Esse projeto e um projeto educativo.
+- Simulações planetárias: Realizar simulações de movimento planetário usando cálculos simplificados.
+- Educação: Facilitar o aprendizado de astronomia e física de forma prática e interativa.
+
+
 
