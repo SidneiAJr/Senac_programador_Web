@@ -26,3 +26,9 @@
 
 ![Rep](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/prints/1111.png)
 
+## Tela de cadastro:
+
+![Cadastro](https://github.com/SidneiAJr/Senac_programador_Web/blob/main/prints/Captura%20de%20tela%202025-10-08%20100148.png)
+
+
+
