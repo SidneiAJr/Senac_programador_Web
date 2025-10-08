@@ -15,6 +15,7 @@ body {
     color: #fff;
     min-height: 100vh;
     padding-top: 60px;
+    overflow: hidden;
 }
 
 /* HEADER / MENU */
@@ -45,7 +46,6 @@ header {
 .menu li a:hover {
     font-weight: bold;
     font-size: 15px;
-    /* From https://css.glass */
     background: rgba(162, 150, 150, 0.08);
     border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -66,6 +66,7 @@ header {
     height: 700px;
     width: 700px;
     margin: auto;
+    padding: 100px;
 }
 
 .a {
