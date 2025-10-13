@@ -1,4 +1,6 @@
-# 😎Introducao a HMTL:
+# 😎 Introdução ao HTML
+
+HTML (HyperText Markup Language) é a linguagem de marcação padrão utilizada para criar páginas na web. Aqui estão alguns dos elementos mais comuns e úteis que você usará ao escrever HTML.
 
 ## Tags em HTML:
 
