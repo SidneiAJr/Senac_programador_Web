@@ -17,3 +17,24 @@
 ***div tipos***
 - class ou id -> Referenciar no css como # ou .
 
+***Parágrafos***
+- p
+
+***strong***
+- Texto em negrito (semântico)
+
+***imagem***
+- img: Para adicionar imagens à página.
+Exemplo: <img src="imagem.jpg" alt="Descrição da imagem">.
+
+***Tabelas***
+
+table: Define uma tabela.
+
+tr: Linha da tabela.
+
+td: Célula da tabela.
+
+th: Cabeçalho da tabela.
+
+
