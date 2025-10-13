@@ -29,12 +29,12 @@ Exemplo: <img src="imagem.jpg" alt="Descrição da imagem">.
 
 ***Tabelas***
 
-table: Define uma tabela.
+- table: Define uma tabela.
 
-tr: Linha da tabela.
+- tr: Linha da tabela.
 
-td: Célula da tabela.
+- td: Célula da tabela.
 
-th: Cabeçalho da tabela.
+- th: Cabeçalho da tabela.
 
 
