@@ -41,15 +41,27 @@
 
 ***Formulários***
 
-form: Para agrupar os campos do formulário.
+- form: Para agrupar os campos do formulário.
 
-input: Campo de entrada (texto, senha, botão, etc).
+- input: Campo de entrada (texto, senha, botão, etc).
 
-label: Rótulo para o input.
+- label: Rótulo para o input.
 
-textarea: Área de texto (para respostas maiores).
+- textarea: Área de texto (para respostas maiores).
 
-select: Lista suspensa.
+- select: Lista suspensa.
 
-option: Opções dentro de um select.
+- option: Opções dentro de um select.
+
+***Elementos de Agrupamento***
+
+- section: Para agrupar conteúdo relacionado (seções de um artigo, por exemplo).
+
+- article: Para indicar um conteúdo independente.
+
+- nav: Para links de navegação.
+
+- footer: Rodapé da página.
+
+- header: Cabeçalho da página.
 
