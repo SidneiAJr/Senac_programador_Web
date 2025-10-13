@@ -65,3 +65,11 @@
 
 - header: Cabeçalho da página.
 
+- aside: Contéudo relacionado, mas que não faz parte do conteúdo principal.
+
+- figure: Para agrupar conteúdo visual, como imagens com legendas.
+
+- figcaption: Para fornecer uma legenda a uma figura.
+
+- main: Define o conteúdo principal de uma página (boa para SEO).  
+
