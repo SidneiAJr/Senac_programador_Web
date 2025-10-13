@@ -10,3 +10,10 @@
 - h5
 - h6
 
+***Lista***
+- li
+- ul
+
+***div tipos***
+- class ou id -> Referenciar no css como # ou .
+
