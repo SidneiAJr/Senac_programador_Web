@@ -39,4 +39,17 @@
 
 - th: Cabeçalho da tabela.
 
+***Formulários***
+
+form: Para agrupar os campos do formulário.
+
+input: Campo de entrada (texto, senha, botão, etc).
+
+label: Rótulo para o input.
+
+textarea: Área de texto (para respostas maiores).
+
+select: Lista suspensa.
+
+option: Opções dentro de um select.
 
