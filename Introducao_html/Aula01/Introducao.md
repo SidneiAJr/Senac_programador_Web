@@ -25,7 +25,9 @@
 
 ***imagem***
 - img: Para adicionar imagens à página.
-Exemplo: <img src="imagem.jpg" alt="Descrição da imagem">.
+  ```html
+  Exemplo: <img src="imagem.jpg" alt="Descrição da imagem">.
+   ```
 
 ***Tabelas***
 
