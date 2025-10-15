@@ -80,3 +80,23 @@ p{
     font-size: 20px;
     color: white;
 }
+
+.e{
+ padding:5px;
+    margin: 10px;
+}
+.f{
+display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.2px);
+    -webkit-backdrop-filter: blur(2.2px);
+    border: 1px solid rgba(0, 0, 0, 0.42);
+    font-size: 20px;
+    color: white;
+}
