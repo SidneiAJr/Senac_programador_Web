@@ -36,6 +36,12 @@ a {
     font-size: 25px;
     color: white;
 }
+a:hover{
+    color: black;
+    font-weight: bolder;
+    background-color: white;
+    border-radius: 5px;
+}
 
 ul {
     font-size: 25px;
@@ -49,4 +55,28 @@ ul {
 li{
     text-decoration: none;
     outline: none;
+    cursor: pointer;
+}
+p{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.c{
+    padding:5px;
+    margin: 10px;
+}
+.d{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.2px);
+    -webkit-backdrop-filter: blur(2.2px);
+    border: 1px solid rgba(0, 0, 0, 0.42);
+    font-size: 20px;
+    color: white;
 }
