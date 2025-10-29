@@ -8,9 +8,11 @@ body{
     background: linear-gradient(to right, #ff7e5f, #ee0979);
 }
 .container{
-    padding: 150px;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .a{
@@ -20,7 +22,7 @@ body{
     align-items: center;
     height: 250px;
     background: linear-gradient(to bottom, #ff7e5f, #feb47b);
-     border-radius: 10px;
+    border-radius: 10px;
 }
 .b{
     display: flex;
