@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Momo Trust Display", sans-serif;
+    outline: none;
+    text-decoration: none;
+}
+
+/* Estilo básico para os menus */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to left, #ff8c00, #6a0dad, #000000);
+}
+
+/* Menu principal */
+.menu {
+    list-style-type: none;
+    padding: 0;
+    background-color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+}
+
+.info_menu {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.info_menu li {
+    margin-bottom: 10px;
+}
+
+.info_menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    display: inline-block;
+}
+
+.info_menu input[type="search"] {
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.loja {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem de linha quando não houver espaço suficiente */
+    justify-content: space-evenly; /* Alinha os itens uniformemente */
+}
+
+.lista_item {
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo verticalmente */
+    align-items: center; /* Alinha os itens no centro */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.6px);
+    -webkit-backdrop-filter: blur(2.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 400px; /* Define uma largura fixa para os itens */
+    height: 400px; /* Define a altura dos itens */
+    margin: 20px; /* Adiciona espaçamento entre os itens */
+    justify-content: space-between;
+    padding: 10px;
+}
+.lista_item:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.lista_item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+.lista_item button {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.lista_item button:hover {
+    background-color: #555;
+}
+
+h2 {
+    background-color: red;
+    font-size: 10px;
+    color: white;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px; /* Alinha o texto verticalmente */
+}
+
+h3 {
+    background-color: red;
+    width: 100px;
+    font-size: 10px;
+    color: white;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px; /* Alinha o texto verticalmente */
+}
+
+.lista_item .tk{
+    width: 50px;
+    height: 50px;
+}
