@@ -1,95 +1,171 @@
+/* ========== CONFIGURAÇÕES GERAIS ========== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Momo Trust Display", sans-serif;
     outline: none;
     text-decoration: none;
+    font-family: "Roboto", sans-serif;
 }
 
-/* Estilo básico para os menus */
 body {
-    font-family: 'Roboto', sans-serif;
     background: linear-gradient(to left, #ff8c00, #6a0dad, #000000);
+    color: white;
 }
 
-/* Menu principal */
-.menu {
-    list-style-type: none;
-    padding: 0;
-    background-color: #333;
+/* ========== MENU PRINCIPAL ========== */
+header {
+    background-color: transparent;
+    padding: 15px 0;
+    text-align: center;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header .menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    /* Espaço entre os itens */
+    list-style: none;
+}
+
+header .menu a {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 18px;
+}
+
+header .menu a:hover {
+    color: #ff8c00;
+}
+
+/* ========== MENU SECUNDÁRIO ========== */
+.menu-secundario {
+    background-color: transparent;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu-secundario ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
     margin: 0;
-    text-align: center;
 }
 
-.menu li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-.menu a {
+.menu-secundario a {
     color: white;
+    font-weight: bold;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+.menu-secundario a:hover {
+    color: #ff8c00;
+}
+
+.menu-secundario input[type="search"] {
     padding: 10px;
-    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+    height: 40px;
+    font-size: 14px;
 }
 
-.info_menu {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-.info_menu li {
-    margin-bottom: 10px;
-}
-
-.info_menu a {
-    color: white;
-    text-decoration: none;
-    padding: 8px;
-    display: inline-block;
-}
-
-.info_menu input[type="search"] {
-    padding: 8px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
+/* ========== ÁREA DA LOJA ========== */
 .loja {
     padding: 50px;
     display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem de linha quando não houver espaço suficiente */
-    justify-content: space-evenly; /* Alinha os itens uniformemente */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
 }
 
+/* ========== CARD DE JOGO ========== */
 .lista_item {
     display: flex;
-    flex-direction: column; /* Alinha o conteúdo verticalmente */
-    align-items: center; /* Alinha os itens no centro */
-    background: rgba(255, 255, 255, 0.2);
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2.6px);
-    -webkit-backdrop-filter: blur(2.6px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    width: 400px; /* Define uma largura fixa para os itens */
-    height: 400px; /* Define a altura dos itens */
-    margin: 20px; /* Adiciona espaçamento entre os itens */
-    justify-content: space-between;
-    padding: 10px;
+    width: 320px;
+    height: 400px;
+    padding: 15px;
 }
-.lista_item:hover{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+.lista_item:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 25px, rgba(0, 0, 0, 0.12) 0px 10px 10px;
 }
 
 .lista_item img {
     width: 150px;
     height: 150px;
-    object-fit: cover; /* Mantém a proporção da imagem */
+    object-fit: cover;
+    border-radius: 10px;
 }
+
+.lista_item h1 {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.lista_item .tk {
+    width: 40px;
+    height: 40px;
+}
+
+.lista_item .tk2 {
+    width: 20px;
+    height: 20px;
+}
+
+.lista_item h3 {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 10px;
+    width: 60px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    margin-top: 10px;
+}
+
+.lista_item h4 {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 10px;
+    width: 70px;
+    height: 55px;
+    text-align: center;
+    line-height: 25px;
+    margin-top: 10px;
+}
+
+
 
 .lista_item button {
     width: 120px;
@@ -105,30 +181,7 @@ body {
     background-color: #555;
 }
 
-h2 {
-    background-color: red;
-    font-size: 10px;
-    color: white;
-    border-radius: 10px;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px; /* Alinha o texto verticalmente */
-}
-
-h3 {
-    background-color: red;
-    width: 100px;
-    font-size: 10px;
-    color: white;
-    border-radius: 10px;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px; /* Alinha o texto verticalmente */
-}
-
-.lista_item .tk{
-    width: 50px;
+input {
+    width: 150px;
     height: 50px;
 }
