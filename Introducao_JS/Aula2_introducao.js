@@ -97,11 +97,17 @@ function ferias(){
 
     for(let i=0; i<temperaturas.length; i++){
       if(temperaturas[i]>media){
-        console.log(`Tempertaura acima da media no dia ${i}`)
+        console.log(`Tempertaura acima da media no dia ${i} Temp ${media.toFixed(2)}`)
       }else{
-         console.log(`Tempertura abaixo da media ${i}`)
+         console.log(`Tempertura abaixo da media ${i}Temp ${media.toFixed(2)}`)
+      }
+      if(temperaturas[i]>media){
+          console.log(`Tempertaura acima da media de 25Cº no dia ${i} Temp ${media.toFixed(2)}`)
+      }else{
+          console.log(`Tempertura abaixo da media 25Cº ${i}Temp ${media.toFixed(2)}`)
       }
     }
+    
 
 
 
