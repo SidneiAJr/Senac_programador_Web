@@ -29,7 +29,9 @@ function arrays2(){
     console.log(numeros)
     let frutas = ["maça", "banana", "laranja", "uva", "manga"];
     frutas.splice(0,1,"")
+    console.log(numeros)
     frutas.splice(1,2,"")
+    console.log(numeros)
     frutas.splice(2,3,"")
     console.log(numeros)
     let produtos = ["notebook", "mouse", "teclado", "monitor", "webcam"];
@@ -45,13 +47,13 @@ function arrays2(){
 });
 }
 
-let valores = [15, 23, 8, 42, 4, 16];
-// let diminuir =  valores[0]-valores[1]-valores[2]-valores[3]-valores[4]-valores[5]
+
 
 let soma = 0;
 let diminuir = 0;
 let maior = 0;
 let menor = 0;
+let valores = [15, 23, 8, 42, 4, 16];
 for(let i=0; i<valores.length; i++){
 
     soma = soma + valores[i];
@@ -84,11 +86,20 @@ arrays2()
 function ferias(){
     let temperaturas = [22, 25, 19, 30, 28, 23, 27];
     let soma = 0;
-    let dividir;
-    soma = soma + valores[i]
-    dividir = soma/7
+    let media = 0;
 
     for(let i=0; i<temperaturas.length; i++){
-        if()
+       soma = soma + temperaturas[i]
+       console.log(`Soma ${soma}`)
+    }
+
+    for(let i=0; i>temperaturas.length; i++){
+      if(temperaturas[i]>media){
+        console.log(`Tempertaura acima da media no dia ${i}`)
+      }else{
+         console.log(`Tempertura abaixo da media ${i}`)
+      }
     }
 }
+
+ferias()
