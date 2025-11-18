@@ -92,6 +92,7 @@ function ferias(){
        soma = soma + temperaturas[i]
        console.log(`Soma ${soma}`)
     }
+    media = soma/7
 
     for(let i=0; i<temperaturas.length; i++){
       if(temperaturas[i]>media){
@@ -100,6 +101,8 @@ function ferias(){
          console.log(`Tempertura abaixo da media ${i}`)
       }
     }
+
+
 }
 
 ferias()
