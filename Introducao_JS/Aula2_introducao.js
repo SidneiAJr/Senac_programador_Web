@@ -1,6 +1,26 @@
-let opcao = Number(prompt("Selecione uma Opção \n 1- Array \n 2- array2 \n 3-Ferias"))
 let Lista = []
-let opcao2 = Number(prompt("Selecione uma Opção \n 1- Listar tarefas \n 2- Remover Tarefas \n 3-Marca Concluidos \n 4- Adicionar"))
+
+function menu(){
+    let opcao = Number(prompt("Selecione uma Opção \n 1- Array \n 2- array2 \n 3-Ferias"))
+      switch(opcao){
+        case 1:
+        arrays();
+        break;
+        case 2:
+        arrays2();
+        break;
+        case 3:
+        ferias();
+        break;
+        case 4:
+        tarefas();
+        break;
+        default:
+        console.log("Erro")
+        break;
+      }
+}
+menu()
 
 function arrays() {
     let array = ["Maça", "Motor", 20, 30]
@@ -113,19 +133,20 @@ function ferias(){
 
 
 function tarefas(){
+    let opcao2 = Number(prompt("Selecione uma Opção \n 1- Listar tarefas \n 2- Remover Tarefas \n 3-Marca Concluidos \n 4- Adicionar"))
       switch(opcao2){
         case 1:
         listarTarefas()
         break;
         case 2:
         removerTarefa()
-        break
+        break;
         case 3:
         marcarConcluida();
         break;
         case 4:
         listarTarefas();
-        break
+        break;
         default:
         console.log("Erro")
         break;
@@ -150,24 +171,5 @@ function marcarConcluida(indice) {
 }
 
 
-function menu(){
-      switch(opcao){
-          
-        case 1:
-        arrays()
-        break;
-        case 2:
-        arrays2()
-        break;
-        case 3:
-        ferias()
-        break;
-        case 4:
-        break;
-        default:
-        console.log("Erro")
-        break;
-      }
-}
 
 
