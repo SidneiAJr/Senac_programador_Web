@@ -1,7 +1,8 @@
 let Lista = []
 
+let opcao = Number(prompt("Selecione uma Opção:\n1-Exercicio 0.1 - Teste\n2-Analise de Valores\n3-Analise de Tempertura\n 4-Sistema de tarefas"))
+while(opcao!==5){
 function menu(){
-    let opcao = Number(prompt("Selecione uma Opção:\n1-Array\n2-array2\n3-Lista"))
       switch(opcao){
         case 1:
         arrays();
@@ -20,8 +21,15 @@ function menu(){
         break;
       }
 }
-menu()
+opcao = Number(prompt("Selecione uma Opção:\n1-Exercicio 1\n2-Analise de Valores\n3-Analise de Tempertura\n 4-Sistema de tarefas"))
+menu();
+}
 
+
+
+
+
+// Exercicio 0.1 Não e o solicitado!
 function arrays() {
     let array = ["Maça", "Motor", 20, 30]
     array.push("Pedro")
@@ -37,10 +45,13 @@ function arrays() {
     
 }
 
+// Exercicio 1: Arrays de Cores, Numeros, Frutas,produtos, par ou impar
+
 function arrays2(){
     let cores = ["Vermelho","Azul","preto","preto2","preto3"]
     console.log(cores[0])
     console.log(cores[2])
+    console.log("==Exercicio 1 - Frutas=====")
     let numeros = [10, 20, 30, 40, 50]
     numeros.push(60);
     console.log(numeros)
@@ -50,13 +61,15 @@ function arrays2(){
     console.log(numeros)
     numeros.slice(3,4)
     console.log(numeros)
+    console.log("==Exercicio 2 - Numeros=====")
     let frutas = ["maça", "banana", "laranja", "uva", "manga"];
     frutas.splice(0,1,"")
-    console.log(numeros)
+    console.log(frutas)
     frutas.splice(1,2,"")
-    console.log(numeros)
+    console.log(frutas)
     frutas.splice(2,3,"")
-    console.log(numeros)
+    console.log(frutas)
+    console.log("=====Exercicio 3 - Frutas=====")
     let produtos = ["notebook", "mouse", "teclado", "monitor", "webcam"];
     for(let i=0; i<produtos.length; i++){
         console.log(`Indice ${i} produtos ${produtos[i]}`)
@@ -64,9 +77,11 @@ function arrays2(){
     }
     for (const item of produtos) {
   console.log(item);
+    }
 
   produtos.forEach((item, index) => {
   console.log(`Índice ${index}: ${item}`);
+  console.log("=====Exercicio 4 - Produtos=====")
 });
 }
 
@@ -102,9 +117,9 @@ for(let i=0; i<valores.length; i++){
 
     console.log(`Soma total: ${soma}`)
     console.log(`Diminuir: ${diminuir}`)
+    console.log("=====Exercicio 5 - Pares & Impares=====")
 }
-}
-
+// Exercicio 2: Ferias, media temperatura, media dia, media geral divido por 7
 function ferias(){
     let temperaturas = [22, 25, 19, 30, 28, 23, 27];
     let soma = 0;
@@ -131,7 +146,7 @@ function ferias(){
     }
 }
 
-
+// Exercicio Extra: Tarefas - Sistemas
 function tarefas(){
     let opcao2 = Number(prompt("Selecione uma Opção \n 1- Listar tarefas \n 2- Remover Tarefas \n 3-Marca Concluidos \n 4- Adicionar"))
       switch(opcao2){
@@ -199,7 +214,6 @@ function marcarConcluida(indice) {
     Lista[indice] = `[CONCLUÍDO] ${Lista[indice]}`;
     console.log(`Tarefa marcada como concluída: ${Lista[indice]}`);
 }
-
 
 
 
