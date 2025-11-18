@@ -93,7 +93,7 @@ function ferias(){
        console.log(`Soma ${soma}`)
     }
 
-    for(let i=0; i>temperaturas.length; i++){
+    for(let i=0; i<temperaturas.length; i++){
       if(temperaturas[i]>media){
         console.log(`Tempertaura acima da media no dia ${i}`)
       }else{
