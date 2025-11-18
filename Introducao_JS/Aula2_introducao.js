@@ -1,3 +1,7 @@
+let opcao = Number(prompt("Selecione uma Opção \n 1- Array \n 2- array2 \n 3-Ferias"))
+let Lista = []
+let opcao2 = Number(prompt("Selecione uma Opção \n 1- Listar tarefas \n 2- Remover Tarefas \n 3-Marca Concluidos \n 4- Adicionar"))
+
 function arrays() {
     let array = ["Maça", "Motor", 20, 30]
     array.push("Pedro")
@@ -12,7 +16,6 @@ function arrays() {
     console.log(array)
     
 }
-arrays()
 
 function arrays2(){
     let cores = ["Vermelho","Azul","preto","preto2","preto3"]
@@ -81,7 +84,6 @@ for(let i=0; i<valores.length; i++){
     console.log(`Diminuir: ${diminuir}`)
 }
 }
-arrays2()
 
 function ferias(){
     let temperaturas = [22, 25, 19, 30, 28, 23, 27];
@@ -107,10 +109,64 @@ function ferias(){
           console.log(`Tempertura abaixo da media 25Cº ${i}Temp ${media.toFixed(2)}`)
       }
     }
-    
-
-
-
 }
 
-ferias()
+
+function tarefas(){
+      switch(opcao2){
+        case 1:
+        listarTarefas()
+        break;
+        case 2:
+        removerTarefa()
+        break
+        case 3:
+        marcarConcluida();
+        break;
+        case 4:
+        listarTarefas();
+        break
+        default:
+        console.log("Erro")
+        break;
+      }
+}
+
+// Funções para implementar:
+function adicionarTarefa(tarefa) {
+  
+}
+
+function removerTarefa(indice) {
+  
+}
+
+function listarTarefas() {
+  
+}
+
+function marcarConcluida(indice) {
+  
+}
+
+
+function menu(){
+      switch(opcao){
+        case 1:
+        arrays()
+        break;
+        case 2:
+        arrays2()
+        break;
+        case 3:
+        ferias()
+        break;
+        case 4:
+        break;
+        default:
+        console.log("Erro")
+        break;
+      }
+}
+
+
