@@ -1,7 +1,7 @@
 let Lista = []
 
 function menu(){
-    let opcao = Number(prompt("Selecione uma Opção \n 1- Array \n 2- array2 \n 3-Ferias"))
+    let opcao = Number(prompt("Selecione uma Opção:\n1-Array\n2-array2\n3-Lista"))
       switch(opcao){
         case 1:
         arrays();
@@ -154,20 +154,50 @@ function tarefas(){
 }
 
 // Funções para implementar:
+function tarefas() {
+    let opcao2 = Number(prompt("Selecione uma Opção \n 1- Listar tarefas \n 2- Remover Tarefas \n 3- Marcar Concluídas \n 4- Adicionar"));
+    switch(opcao2){
+        case 1:
+            listarTarefas();
+            break;
+        case 2:
+            let indiceRemover = Number(prompt("Qual tarefa deseja remover?"));
+            removerTarefa(indiceRemover);
+            break;
+        case 3:
+            let indiceConcluir = Number(prompt("Qual tarefa deseja marcar como concluída?"));
+            marcarConcluida(indiceConcluir);
+            break;
+        case 4:
+            let tarefa = prompt("Qual tarefa deseja adicionar?");
+            adicionarTarefa(tarefa);
+            break;
+        default:
+            console.log("Erro");
+            break;
+    }
+}
+
 function adicionarTarefa(tarefa) {
-  
+    Lista.push(tarefa);
+    console.log(`Tarefa adicionada: ${tarefa}`);
 }
 
 function removerTarefa(indice) {
-  
+    Lista.splice(indice, 1);
+    console.log(`Tarefa removida com sucesso!`);
 }
 
 function listarTarefas() {
-  
+    console.log("Tarefas:");
+    Lista.forEach((tarefa, index) => {
+        console.log(`${index}: ${tarefa}`);
+    });
 }
 
 function marcarConcluida(indice) {
-  
+    Lista[indice] = `[CONCLUÍDO] ${Lista[indice]}`;
+    console.log(`Tarefa marcada como concluída: ${Lista[indice]}`);
 }
 
 
