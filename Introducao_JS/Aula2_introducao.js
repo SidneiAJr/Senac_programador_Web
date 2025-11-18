@@ -78,8 +78,17 @@ for(let i=0; i<valores.length; i++){
     console.log(`Soma total: ${soma}`)
     console.log(`Diminuir: ${diminuir}`)
 }
-
-
-
 }
 arrays2()
+
+function ferias(){
+    let temperaturas = [22, 25, 19, 30, 28, 23, 27];
+    let soma = 0;
+    let dividir;
+    soma = soma + valores[i]
+    dividir = soma/7
+
+    for(let i=0; i<temperaturas.length; i++){
+        if()
+    }
+}
