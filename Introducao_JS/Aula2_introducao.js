@@ -44,12 +44,41 @@ function arrays2(){
   console.log(`Índice ${index}: ${item}`);
 });
 }
-let valores = [15, 23, 8, 42, 4, 16];
-let soma = valores[0]+valores[1]+valores[2]+valores[3]+valores[4]+valores[5]
 
+let valores = [15, 23, 8, 42, 4, 16];
+// let diminuir =  valores[0]-valores[1]-valores[2]-valores[3]-valores[4]-valores[5]
+
+let soma = 0;
+let diminuir = 0;
+let maior = 0;
+let menor = 0;
 for(let i=0; i<valores.length; i++){
+
+    soma = soma + valores[i];
+    diminuir = diminuir - valores[i]
+
+    let par = valores[i] % 2;
+
+    if(par===0){
+        console.log("E par")
+    }else{
+        console.log("E impar")
+    }
+
+    if(maior>valores[i]){
+        maior = valores[i]
+        console.log(`E Maior ${maior}`)
+    }
+
+    if(menor<valores[i]){
+        menor = valores[i]
+        console.log(`E Maior ${menor}`)
+    }
+
     console.log(`Soma total: ${soma}`)
+    console.log(`Diminuir: ${diminuir}`)
 }
+
 
 
 }
