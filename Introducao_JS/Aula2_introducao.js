@@ -87,6 +87,7 @@ function ferias(){
     let temperaturas = [22, 25, 19, 30, 28, 23, 27];
     let soma = 0;
     let media = 0;
+    let dias = 0;
 
     for(let i=0; i<temperaturas.length; i++){
        soma = soma + temperaturas[i]
@@ -101,6 +102,7 @@ function ferias(){
          console.log(`Tempertura abaixo da media ${i}`)
       }
     }
+
 
 
 }
