@@ -152,6 +152,7 @@ function marcarConcluida(indice) {
 
 function menu(){
       switch(opcao){
+          
         case 1:
         arrays()
         break;
