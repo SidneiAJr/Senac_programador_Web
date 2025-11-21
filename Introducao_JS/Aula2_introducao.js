@@ -34,13 +34,13 @@ function arrays() {
     let array = ["Maça", "Motor", 20, 30]
     array.push("Pedro")
     console.log(array)
-    array.splice(1, 2, "Jaguara")
+    array.splice(1, 2, "Agua")
     console.log(array)
-    array.unshift("Pedro mesa")
+    array.unshift("Fermento")
     console.log(array)
     array.shift(1)
     console.log(array)
-    array.pop("pedro jr")
+    array.pop(0)
     console.log(array)
     
 }
@@ -214,6 +214,3 @@ function marcarConcluida(indice) {
     Lista[indice] = `[CONCLUÍDO] ${Lista[indice]}`;
     console.log(`Tarefa marcada como concluída: ${Lista[indice]}`);
 }
-
-
-
