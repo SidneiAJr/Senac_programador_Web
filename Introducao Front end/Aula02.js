@@ -31,3 +31,29 @@ inputTexto.addEventListener('keyup', function() {
     // Atualiza o conteúdo do parágrafo com o texto do input
     textoMostrar.textContent = inputTexto.value;
 });
+
+function adicionar() {
+            // Pega o valor digitado no campo de texto
+            var tarefa = document.getElementById('tarefa').value;
+
+            // Verifica se o campo não está vazio
+            if (tarefa.trim() !== '') {
+                // Cria um novo item da lista (li)
+                let li = document.createElement('li');
+                li.textContent = tarefa;
+
+                // Adiciona o <li> à lista (<ul>)
+                document.getElementById('listaTarefas').appendChild(li);
+
+                // Limpa o campo de texto após adicionar a tarefa
+                document.getElementById('tarefa').value = '';
+            } else {
+                alert("Digite uma tarefa válida!");
+            }
+}
+
+function mudartema() {
+            // Alterna entre as classes "claro" e "escuro"
+            document.body.classList.toggle('escuro');
+            document.body.classList.toggle('claro');
+        }
