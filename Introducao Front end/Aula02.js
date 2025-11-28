@@ -22,15 +22,6 @@ colorBox.addEventListener("mouseout", function() {
     colorBox.style.backgroundColor = "gray";
 });
 
-// Seleciona o input e o parágrafo
-let inputTexto = document.getElementById('inputTexto');
-let textoMostrar = document.getElementById('textoMostrar');
-
-// Adiciona o evento 'keyup' ao input
-inputTexto.addEventListener('keyup', function() {
-    // Atualiza o conteúdo do parágrafo com o texto do input
-    textoMostrar.textContent = inputTexto.value;
-});
 
 function adicionar() {
             // Pega o valor digitado no campo de texto
