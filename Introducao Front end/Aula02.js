@@ -1,6 +1,6 @@
 // Função para esconder ou mostrar um elemento
 function esconder() {
-    let documento = document.getElementById("colorBox");
+    let documento = document.getElementById("info");
 
     if (documento.style.display === "none") {
         documento.style.display = "block"; // Mostrar
@@ -8,7 +8,6 @@ function esconder() {
         documento.style.display = "none"; // Esconder
     }
 }
-
 // Seleciona a <div> com a classe 'b' (e id 'colorBox')
 let colorBox = document.getElementById("colorBox");
 
@@ -21,6 +20,16 @@ colorBox.addEventListener("mouseover", function() {
 colorBox.addEventListener("mouseout", function() {
     colorBox.style.backgroundColor = "gray";
 });
+
+// Seleciona o input e o parágrafo
+        let inputTexto = document.getElementById('inputTexto');
+        let textoMostrar = document.getElementById('textoMostrar');
+
+        // Adiciona o evento 'keyup' ao input
+        inputTexto.addEventListener('keyup', function() {
+            // Atualiza o conteúdo do parágrafo com o texto do input
+            textoMostrar.textContent = inputTexto.value;
+        });
 
 
 function adicionar() {
