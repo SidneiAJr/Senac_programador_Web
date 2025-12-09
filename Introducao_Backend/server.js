@@ -16,7 +16,10 @@ app.get('/pegar',(req,res)=>{
     res.send('Ola Mundo');
 })
 
-
+//Iniciar servidor
+app.listen(PORT,()=>{
+    console.log(`Servidor Rodando em LocalHost:${PORT}`)
+})
 
 
 
