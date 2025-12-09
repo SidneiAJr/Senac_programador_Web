@@ -16,6 +16,21 @@ app.get('/pegar',(req,res)=>{
     res.send('Ola Mundo');
 })
 
+app.get('/a',(req,res)=>{
+    res.send('Coe');
+})
+
+// Rota para Adicionar uma Informação
+app.post('/usuarios',(req,res)=>{
+   const novoUsuario = req.body;
+   console.log("Novo Usuario Cadastrado",novoUsuario)
+   res.status(201).json({
+    mensagem: "Usuario cadastrado com sucesso",
+    usuario: novoUsuario
+   })
+})
+
+
 //Iniciar servidor
 app.listen(PORT,()=>{
     console.log(`Servidor Rodando em LocalHost:${PORT}`)
