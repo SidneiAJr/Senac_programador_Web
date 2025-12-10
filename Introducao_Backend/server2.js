@@ -37,9 +37,9 @@ app.post('/usuarios',(req,res)=>{
     // FUnção que me permite executar um comando de banco de dados
     connection.query(comandobanco,[nome,email],(erro)=>{
          if(erro){
-          return res.return(500).send("Erro ao adicionar usuario!")
+          return res.status(500).send("Erro ao adicionar usuario!")
          }
-         return res.return(201).send("Usuario Adicionado com sucesso!")
+         return res.status(201).send("Usuario Adicionado com sucesso!")
     })
 
 
