@@ -33,7 +33,9 @@ connection.connect()
 
 app.post('/usuarios',(req,res)=>{
     const {nome,email}=req.body
+    const comandobanco = "INSERT INTO usuarios (nome,email) values(?,?)"
     
+
    
 })
 
