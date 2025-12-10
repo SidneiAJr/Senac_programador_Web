@@ -19,10 +19,15 @@ const connection = mysql.createConnection({
     port: 3306, // Porta
     user : 'root', // usuario
     password : 'root', // senha
-    database: 'meu_banco' // Nome Banco
+    database: 'banco_teste' // Nome Banco
 })
 
 // Conecta usando as informações que passamos acima
 connection.connect()
 
 
+const port = 3000
+app.listen(port,()=>{
+    console.log(`Servidor Rodando localhost${port}`)
+    
+})
