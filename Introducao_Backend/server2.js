@@ -22,6 +22,7 @@ const connection = mysql.createConnection({
     database: 'meu_banco' // Nome Banco
 })
 
-
+// Conecta usando as informações que passamos acima
+connection.connect()
 
 
