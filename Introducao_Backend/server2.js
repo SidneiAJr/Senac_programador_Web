@@ -34,6 +34,16 @@ connection.connect()
 app.post('/usuarios',(req,res)=>{
     const {nome,email}=req.body
     const comandobanco = "INSERT INTO usuarios (nome,email) values(?,?)"
+    // FUnção que me permite executar um comando de banco de dados
+    connection.query(comandobanco,[nome,email],(erro)=>{
+         if(erro){
+          return res.return(500).send("Erro ao adicionar usuario!")
+         }
+         return res.return(201).send("Usuario Adicionado com sucesso!")
+    })
+
+
+    
     
 
    
