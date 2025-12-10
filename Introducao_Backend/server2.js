@@ -25,9 +25,51 @@ const connection = mysql.createConnection({
 // Conecta usando as informações que passamos acima
 connection.connect()
 
+/*
+==================================
+============ROTAS=================
+// Rotas para criar um usuario
+*/
+
+app.post('/usuarios',(req,res)=>{
+    const {nome,email}=req.body
+    
+   
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const port = 3000
 app.listen(port,()=>{
     console.log(`Servidor Rodando localhost${port}`)
-    
 })
+
+
