@@ -49,7 +49,8 @@ app.get('/ler',(req,res)=>{
          if(erro){
           return res.status(500).send("Erro | Leitura nâo Realizada")
          }
-         
+         res.status(200).json(resultado)
+
     })
 })
 
