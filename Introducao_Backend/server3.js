@@ -1,52 +1,89 @@
-// Importando Biblioteca eu uso express.motodo()
+/*
+E o script do nosso servidor
+Nele vamos disctutir as rotas e o que cada uma delas faz
+nos tambem vamo nos conectar com nosso banco de dados
+*/
+
 const express = require('express')
 
-// Criar uma instancia do express
-// Sempre que eu quiser precisar acessar um metodo
+// Importando a biblioteca do mysql2 que tem funções para se conctar a interagir com meu banco dados
+const mysql = require('mysql2')
+
 const app = express()
 
-//expres.sjon()tambem e um metodo da biblioteca dos express que indica que nosso codigo vai ler arquivos formato json
+// Nosso servidor vai nos conectar
 app.use(express.json())
 
-//Define a porta do servidor
-const PORT = 3000
-
-// Aqui vamo definir rotas
-app.get('/pegar',(req,res)=>{
-    res.send('Ola Mundo');
+const connection = mysql.createConnection({
+    host: 'localhost', // Host
+    port: 3306, // Porta
+    user : 'root', // usuario
+    password : 'root', // senha
+    database: 'banco_teste' // Nome Banco
 })
 
-app.get('/a',(req,res)=>{
-    res.send('Coe');
-})
+// Conecta usando as informações que passamos acima
+connection.connect()
 
-// Rota para Adicionar uma Informação
-// Esta variavel vai receber informações de um novo usuario 
-// req significa requesição
-// body significa body requesição
+/*
+==================================
+============ROTAS=================
+// Rotas para criar um usuario
+*/
 
 app.post('/usuarios',(req,res)=>{
-   const novoUsuario = req.body;
-   console.log("Novo Usuario Cadastrado",novoUsuario)
-   res.status(201).json({
-    mensagem: "Usuario cadastrado com sucesso",
-    usuario: novoUsuario
-   })
+    const {nome,email}=req.body
+    const comandobanco = "INSERT INTO usuarios (nome,email) values(?,?)"
+    // FUnção que me permite executar um comando de banco de dados
+    connection.query(comandobanco,[nome,email],(erro)=>{
+         if(erro){
+          return res.status(500).send("Erro ao adicionar usuario!")
+         }
+         return res.status(201).send("Usuario Adicionado com sucesso!")
+    })
 })
 
-connection.query(comando,[nome,usuario],(erro)=>{
-    if(erro){
-        return res.status(500).send("erro ao tentar inserir usuario")
-    }
-    res.status(201).send("Usuario foi criado com Sucesso!")
+app.get('/ler',(req,res)=>{
+    const {nome,email}=req.body
+    const leitura = "SELECT * FROM banco_teste.usuarios";
+     connection.query(leitura,[nome,email],(erro)=>{
+         if(erro){
+          return res.status(500).send("Erro | Leitura nâo Realizada")
+         }
+         return res.status(201).send(`Segue os daos meus chefe ${leitura}`)
+    })
 })
 
 
-//Iniciar servidor
-app.listen(PORT,()=>{
-    console.log(`Servidor Rodando em LocalHost:${PORT}`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const port = 3000
+app.listen(port,()=>{
+    console.log(`Servidor Rodando localhost${port}`)
 })
-
-
-
 
