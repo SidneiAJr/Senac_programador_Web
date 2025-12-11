@@ -44,13 +44,12 @@ app.post('/usuarios',(req,res)=>{
 })
 
 app.get('/ler',(req,res)=>{
-    const {nome,email}=req.body
     const leitura = "SELECT * FROM banco_teste.usuarios";
-     connection.query(leitura,[nome,email],(erro)=>{
+     connection.query(leitura,(erro,resultado)=>{
          if(erro){
           return res.status(500).send("Erro | Leitura nâo Realizada")
          }
-         return res.status(201).send(`Segue os daos meus chefe ${leitura}`)
+         
     })
 })
 
