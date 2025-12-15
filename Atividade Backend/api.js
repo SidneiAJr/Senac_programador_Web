@@ -89,8 +89,20 @@ async function procurarPorId() {
 
         // Converte a resposta para JSON
         const data = await response.json();
-        const saida = document.getElementById('res');
-        saida.innerHTML=`Pokekon ID ${data}`;
+        if (data.length > 0) {
+            const pokemon = data[0];  // Pega o primeiro Pokémon da resposta (se houver)
+            const saida = document.getElementById('saida');
+            // Exibe as informações de forma mais detalhada
+            saida.innerHTML = `
+                <h3>Pokémon Encontrado:</h3>
+                <p><strong>ID:</strong> ${pokemon.id}</p><br>
+                <p><strong>Nome:</strong> ${pokemon.nome_pokemon}</p><br>
+                <p><strong>Tipo:</strong> ${pokemon.tipo_pokemon}</p><br>
+                <p><strong>Tem Evolução?</strong> ${pokemon.tem_evolucao}</p><br>
+            `;
+        } else {
+            alert('Pokémon não encontrado!');
+        }
 
 
     } catch (error) {
