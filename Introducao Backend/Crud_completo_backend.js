@@ -1,127 +1,200 @@
 /*
-E o script do nosso servidor
-Nele vamos disctutir as rotas e o que cada uma delas faz
-nos tambem vamo nos conectar com nosso banco de dados
+===========================================
+SCRIPT DO SERVIDOR (BACK-END)
+===========================================
+
+Aqui a gente:
+- Cria um servidor com Express
+- Conecta no banco MySQL
+- Define as rotas (CRUD)
+- Permite o front conversar com o back
 */
 
+// Importa o Express (framework pra criar servidor)
 const express = require('express')
 
-// Importando a biblioteca do mysql2 que tem funções para se conctar a interagir com meu banco dados
+// Importa o mysql2 (pra conectar e conversar com o banco)
 const mysql = require('mysql2')
-// Importando biblioteca do cors
+
+// Importa o CORS (pra não dar aquele erro chato de navegador)
 const cors = require('cors')
 
+// Cria a aplicação Express
 const app = express()
 
-// Nosso servidor vai nos conectar
+/*
+Middleware:
+- express.json() -> permite receber JSON no body das requisições
+- cors() -> libera acesso de outros endereços (front-end)
+*/
 app.use(express.json())
-app.use(cors());
+app.use(cors())
 
+/*
+Configuração da conexão com o banco de dados
+Aqui você passa:
+- onde está o banco
+- usuário
+- senha
+- nome do banco
+*/
 const connection = mysql.createConnection({
-    host: 'localhost', // Host
-    port: 3306, // Porta
-    user : 'root', // usuario
-    password : 'root', // senha
-    database: 'banco_teste' // Nome Banco
+    host: 'localhost',   // Onde está o banco (máquina local)
+    port: 3306,          // Porta padrão do MySQL
+    user: 'root',        // Usuário do banco
+    password: 'root',    // Senha do banco
+    database: 'banco_teste' // Nome do banco
 })
 
-// Conecta usando as informações que passamos acima
+// Abre a conexão com o banco
 connection.connect()
 
 /*
-==================================
-============ROTAS=================
-// Rotas para criar um usuario
+===========================================
+ROTAS
+Aqui começa o CRUD:
+C = Create (Criar)
+R = Read (Ler)
+U = Update (Atualizar)
+D = Delete (Deletar)
+===========================================
 */
-//Inserção de Informação
-app.post('/criar',(req,res)=>{
-    const {nome,email,senha}=req.body
-    const comandobanco = "INSERT INTO usuarios (nome,email,senha) values(?,?,?)"
-    // FUnção que me permite executar um comando de banco de dados
-    connection.query(comandobanco,[nome,email,senha],(erro)=>{
-         if(erro){
-          return res.status(500).send("Erro ao adicionar usuario!")
-         }
-         return res.status(201).send("Usuario Adicionado com sucesso!")
-    })
-})
-// Seleciona tudo do banco
-app.get('/ler',(req,res)=>{
-    const leitura = "SELECT * FROM banco_teste.usuarios";
-     connection.query(leitura,(erro,resultado)=>{
-         if(erro){
-          return res.status(500).send("Erro | Leitura nâo Realizada")
-         }
-         res.status(200).json(resultado)
 
-    })
-})
+/*
+-------------------------------------------
+CRIAR USUÁRIO (CREATE)
+-------------------------------------------
+Rota POST porque estamos ENVIANDO dados
+*/
+app.post('/criar', (req, res) => {
 
-// Selecionando Pelo ID & Retorna de um usuario especifico
-app.get('/ler/:id',(req,res)=>{
-    // Pegue atravez do parametro da requesição
-    const {id}= req.params
-    const leitura = "SELECT * from usuarios where id = ?";
-     connection.query(leitura,[id],(erro,resultado)=>{
-         if(erro){
-          return res.status(500).send("Erro | Leitura nâo Realizada")
-         }
-         res.status(200).json(resultado)
+    // Pegando os dados que vieram do front-end
+    const { nome, email, senha } = req.body
+
+    // Comando SQL para inserir dados no banco
+    const comandoBanco = `
+        INSERT INTO usuarios (nome, email, senha)
+        VALUES (?, ?, ?)
+    `
+
+    // Executa o comando no banco
+    connection.query(comandoBanco, [nome, email, senha], (erro) => {
+
+        // Se deu erro, responde com erro 500
+        if (erro) {
+            return res.status(500).send("Erro ao adicionar usuário!")
+        }
+
+        // Se deu tudo certo
+        return res.status(201).send("Usuário adicionado com sucesso!")
     })
 })
 
+/*
+-------------------------------------------
+LER TODOS OS USUÁRIOS (READ)
+-------------------------------------------
+Rota GET porque estamos só buscando dados
+*/
+app.get('/ler', (req, res) => {
 
-// Atualiza as informações de usuario:
-app.put('/atualizar/:id',(req,res)=>{
-    const {id} = req.params
-    const {nome,email} = req.body
-    const atualizao = "Update usuarios set nome = ?,email = ? where id = ?";
-     connection.query(atualizao,[nome,email,id],(erro,resultado)=>{
-         if(erro){
-          return res.status(500).send("Erro | ao tentar atualizar o usuario")
-         }
-         res.status(200).send("Usuario Atualizado com sucesso!!!")
+    // SQL que busca todos os usuários
+    const leitura = "SELECT * FROM usuarios"
+
+    connection.query(leitura, (erro, resultado) => {
+
+        if (erro) {
+            return res.status(500).send("Erro | Leitura não realizada")
+        }
+
+        // Retorna os dados em formato JSON
+        res.status(200).json(resultado)
     })
 })
 
-//rota para deletar
-app.delete('/deletar/:id',(req,res)=>{
-    const {id} = req.params
-    const atualizao = "delete from usuarios where id = ?";
-     connection.query(atualizao,[id],(erro,resultado)=>{
-         if(erro){
-          return res.status(500).send("Erro | ao tentar atualizar o usuario")
-         }
-         res.status(200).send("Usuario Atualizado com sucesso!!!")
+/*
+-------------------------------------------
+LER USUÁRIO PELO ID (READ)
+-------------------------------------------
+*/
+app.get('/ler/:id', (req, res) => {
+
+    // Pega o ID que veio na URL
+    const { id } = req.params
+
+    const leitura = "SELECT * FROM usuarios WHERE id = ?"
+
+    connection.query(leitura, [id], (erro, resultado) => {
+
+        if (erro) {
+            return res.status(500).send("Erro | Leitura não realizada")
+        }
+
+        res.status(200).json(resultado)
     })
 })
 
+/*
+-------------------------------------------
+ATUALIZAR USUÁRIO (UPDATE)
+-------------------------------------------
+*/
+app.put('/atualizar/:id', (req, res) => {
 
+    // ID vem da URL
+    const { id } = req.params
 
+    // Nome e email vêm do body
+    const { nome, email } = req.body
 
+    const atualizacao = `
+        UPDATE usuarios
+        SET nome = ?, email = ?
+        WHERE id = ?
+    `
 
+    connection.query(atualizacao, [nome, email, id], (erro) => {
 
+        if (erro) {
+            return res.status(500).send("Erro ao tentar atualizar o usuário")
+        }
 
+        res.status(200).send("Usuário atualizado com sucesso!")
+    })
+})
 
+/*
+-------------------------------------------
+DELETAR USUÁRIO (DELETE)
+-------------------------------------------
+*/
+app.delete('/deletar/:id', (req, res) => {
 
+    // ID vem da URL
+    const { id } = req.params
 
+    const deletar = "DELETE FROM usuarios WHERE id = ?"
 
+    connection.query(deletar, [id], (erro) => {
 
+        if (erro) {
+            return res.status(500).send("Erro ao tentar deletar o usuário")
+        }
 
+        res.status(200).send("Usuário deletado com sucesso!")
+    })
+})
 
+/*
+===========================================
+SUBINDO O SERVIDOR
+===========================================
+*/
 
-
-
-
-
-
-
-
-
-
-
+// Porta onde o servidor vai rodar
 const port = 3000
-app.listen(port,()=>{
-    console.log(`Servidor Rodando localhost:${port}`)
-})
 
+// Inicia o servidor
+app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`)
+})
