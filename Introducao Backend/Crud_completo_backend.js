@@ -8,11 +8,14 @@ const express = require('express')
 
 // Importando a biblioteca do mysql2 que tem funções para se conctar a interagir com meu banco dados
 const mysql = require('mysql2')
+// Importando biblioteca do cors
+const cors = require('cors')
 
 const app = express()
 
 // Nosso servidor vai nos conectar
 app.use(express.json())
+app.use(cors());
 
 const connection = mysql.createConnection({
     host: 'localhost', // Host
@@ -69,7 +72,7 @@ app.get('/ler/:id',(req,res)=>{
 
 
 // Atualiza as informações de usuario:
-app.put('/at/:id',(req,res)=>{
+app.put('/atualizar/:id',(req,res)=>{
     const {id} = req.params
     const {nome,email} = req.body
     const atualizao = "Update usuarios set nome = ?,email = ? where id = ?";
@@ -92,6 +95,30 @@ app.delete('/deletar/:id',(req,res)=>{
          res.status(200).send("Usuario Atualizado com sucesso!!!")
     })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const port = 3000
 app.listen(port,()=>{
