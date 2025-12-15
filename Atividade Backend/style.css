@@ -3,52 +3,166 @@
     padding: 0;
     box-sizing: border-box;
     outline: none;
-    text-decoration-style: none;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    list-style: none;
 }
-body{
+
+body {
     background: linear-gradient(to left, #FF7F50, #FF4500, #FFD700);
+    font-family: "Roboto", sans-serif;
 }
 
 .space {
-    margin: 100px;
-    padding: 100px;
-    /* From https://css.glass */
-background: rgba(255, 255, 255, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5.1px);
--webkit-backdrop-filter: blur(5.1px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 50px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 900px;
+    width: 100%;
 }
 
 .display {
     display: flex;
-    flex-direction: column; /* Isso vai empilhar os elementos */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
+h1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 form input {
-    margin-bottom: 10px; /* Dá um espaçamento entre os inputs */
-    padding: 8px;
-    width: 200px; /* Tamanho fixo para os inputs */
+    margin-bottom: 12px;
+    padding: 12px 15px;
+    width: 250px;
     border-radius: 10px;
-    border: none;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+form input:focus {
+    border-color: #FF4500;
+    box-shadow: 0 0 5px rgba(255, 69, 0, 0.5);
 }
 
 button {
-    margin-top: 10px; /* Espaço entre o último input e o botão */
-    padding: 10px;
-    width: 200px; /* Para os botões ficarem com o mesmo tamanho que os inputs */
+    margin-top: 12px;
+    padding: 12px;
+    width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
     border-radius: 10px;
+    background-color: #FF4500;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-h1{
-    color: white;
-    font-weight: bolder;
+button:hover {
+    background-color: #FF7F50;
+    transform: scale(1.05);
 }
+
+button:active {
+    background-color: #FF8C00;
+    transform: scale(0.98);
+}
+
+button img {
+    margin-right: 8px;
+}
+
+#res {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+table th {
+    background-color: #FF4500;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+table tr:hover {
+    background-color: #FF7F50;
+    color: white;
+}
+
+table td button {
+    padding: 6px 12px;
+    background-color: #FF4500;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+table td button:hover {
+    background-color: #FF7F50;
+}
+
+.list,
+.exc {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.list:hover {
+    background-color: #45a049;
+}
+
+.exc:hover {
+    background-color: #f44336;
+}
+
+.add:hover {
+    background-color: #45a049;
+}
+
