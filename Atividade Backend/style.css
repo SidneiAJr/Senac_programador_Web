@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration-style: none;
+}
+body{
+    background: linear-gradient(to left, #FF7F50, #FF4500, #FFD700);
+}
+
+.space {
+    margin: 100px;
+    padding: 100px;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.1px);
+-webkit-backdrop-filter: blur(5.1px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.display {
+    display: flex;
+    flex-direction: column; /* Isso vai empilhar os elementos */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+form input {
+    margin-bottom: 10px; /* Dá um espaçamento entre os inputs */
+    padding: 8px;
+    width: 200px; /* Tamanho fixo para os inputs */
+    border-radius: 10px;
+    border: none;
+}
+
+button {
+    margin-top: 10px; /* Espaço entre o último input e o botão */
+    padding: 10px;
+    width: 200px; /* Para os botões ficarem com o mesmo tamanho que os inputs */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+}
+
+h1{
+    color: white;
+    font-weight: bolder;
+}
