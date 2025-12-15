@@ -82,7 +82,7 @@ app.put('/at/:id',(req,res)=>{
 })
 
 //rota para deletar
-app.put('/deletar/:id',(req,res)=>{
+app.delete('/deletar/:id',(req,res)=>{
     const {id} = req.params
     const atualizao = "delete from usuarios where id = ?";
      connection.query(atualizao,[id],(erro,resultado)=>{
