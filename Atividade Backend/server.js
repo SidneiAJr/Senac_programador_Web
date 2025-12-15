@@ -27,7 +27,40 @@ app.post('/Inserir',(req,res)=>{
    })
 })
 
+app.delete('/Deletar',(req,res)=>{
+   const {id} = req.params
+   const comandoBanco = `delete from pokemons(id)VALUES(?)`
+   connection.query(comandoBanco,[deletar,[id]],(erro)=>{
+   if(erro){
+    return res.status(500).send("Erro ao Deletar Pokemon ao Banco!")
+   } return res.status(200).send("Sucesso ao Adicionar Pokemon ao Banco!")
+   })
+})
+
+app.get('/Listar',(req,res)=>{
+   const comandoBanco = `Select * from usuarios`
+   connection.query(comandoBanco,(erro)=>{
+   if(erro){
+    return res.status(500).send("Erro ao Listar!")
+   } return res.status(200).send("Listado com Sucesso!")
+   })
+})
+
+app.get('/Listar/:id',(req,res)=>{
+   const {id} = req.params
+   const leitura = "Select * from usuarios where id =?"
+   connection.query(leitura,[id],(erro,resultado)=>{
+    if(erro){
+         return res.status(500).send("Erro ao Listar!")
+    }return res.status(200).send("Listado com Sucesso!")
+   })
+})
+
+
+
 const port= 3000
 app.listen(port,()=>{
-    console.log(`Servidor Rodando em http://localhost${port}`)
+    console.log(`Servidor Rodando em http://localhost:${port}`)
 })
+
+
