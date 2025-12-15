@@ -5,7 +5,7 @@
 - Neste servidor deve ser permitido registrar, ler, atualizar e deletar pokemons.
 - As Informações Necessarias ficam a cargo de voces
 
-## `Sugestão`:
+## `Sugestão | Pokemon`:
 
 - Nome, tipo.
 - Pedir uma lista pro chatGPT.
