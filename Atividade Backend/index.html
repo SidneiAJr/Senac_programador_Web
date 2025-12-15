@@ -22,8 +22,23 @@
                 <button class="add" onclick="addpok()"><img width="20" height="20" src="https://img.icons8.com/ios/50/add--v1.png" alt="add--v1"/>Adicionar</button>
                 <button class="exc" onclick="deletarPokemon()">Excluir</button>
                 <button class="list" onclick="obterUsuarios()"><img width="20" height="20" src="https://img.icons8.com/ios/50/ingredients-list.png" alt="ingredients-list"/>Listar</button>
-                <div id="res"></div>
             </div>
+        </div>
+
+        <!-- Tabela para exibir os pokémons -->
+        <div id="res">
+            <table border="1" cellpadding="5" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Nome do Pokémon</th>
+                        <th>Tipo do Pokémon</th>
+                        <th>Tem Evolução?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Os dados dos pokémons serão inseridos aqui -->
+                </tbody>
+            </table>
         </div>
     </main>
     <script src="api.js"></script>
