@@ -49,6 +49,18 @@ app.get('/Listar', (req, res) => {
     });
 });
 
+app.get('/Listar/:id', (req, res) => {
+    const { id } = req.params; 
+    const comandoBanco = `SELECT * FROM pokemons Where id=?`;  // Verifique se você está consultando a tabela correta
+    connection.query(comandoBanco,[id], (erro, resultados) => {
+        if (erro) {
+            return res.status(500).send("Erro ao Listar!");
+        }
+        return res.status(200).json(resultados);  // Envia os dados como JSON
+    });
+});
+
+
 const port = 3000;
 app.listen(port, () => {
     console.log(`Servidor Rodando em http://localhost:${port}`);
