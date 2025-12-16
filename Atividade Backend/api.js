@@ -16,6 +16,8 @@ async function addpok() {
     // Captura o valor do input com id "tem_evolucao"
     const tem_evolucao = document.getElementById('tem_evolucao').value;
 
+    const id = document.getElementById('id').value;
+
     try {
         // Envia uma requisição POST para a rota /Inserir
         const response = await fetch(`${api_url}/Inserir`, {
@@ -30,9 +32,10 @@ async function addpok() {
 
             // Converte os dados JS em JSON e envia no corpo da requisição
             body: JSON.stringify({ 
+                id,
                 nome_pokemon, 
                 tipo_pokemon, 
-                tem_evolucao 
+                tem_evolucao
             })
         });
 
@@ -187,8 +190,44 @@ async function deletarPokemon() {
 
     try {
         // Envia uma requisição DELETE para a rota /Deletar/:id
-        const response = await fetch(`${api_url}/Deletar/${id}`, {
+        const response = await fetch(`${api_url}/deletar/${id}`, {
             method: 'DELETE'
+        });
+
+        // Lê a resposta do servidor como texto
+        const data = await response.text();
+
+        // Exibe a mensagem retornada pelo backend
+        alert(data);
+
+    } catch (error) {
+        // Exibe erros no console
+        console.error('Erro:', error);
+    }
+}
+
+async function atualizar() {
+    // Captura os valores dos inputs
+    const id = document.getElementById('id').value;
+    const nome_pokemon = document.getElementById('nome_pokemon').value;
+    const tipo_pokemon = document.getElementById('tipo_pokemon').value;
+    const tem_evolucao = document.getElementById('tem_evolucao').value;
+
+    // Cria um objeto com os dados a serem enviados no corpo da requisição
+    const dadosAtualizacao = {
+        nome_pokemon,
+        tipo_pokemon,
+        tem_evolucao
+    };
+
+    try {
+        // Envia uma requisição PUT para a rota /atualizar/:id
+        const response = await fetch(`${api_url}/atualizar/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json', // Indica que estamos enviando JSON
+            },
+            body: JSON.stringify(dadosAtualizacao) // Envia os dados no corpo da requisição
         });
 
         // Lê a resposta do servidor como texto
