@@ -1,98 +1,159 @@
+// URL base da API (backend rodando localmente na porta 3000)
 const api_url = "http://localhost:3000";
 
+
+// ===============================
+// FUNÇÃO: INSERIR POKÉMON
+// ===============================
 async function addpok() {
+
+    // Captura o valor do input com id "nome_pokemon"
     const nome_pokemon = document.getElementById('nome_pokemon').value;
+
+    // Captura o valor do input com id "tipo_pokemon"
     const tipo_pokemon = document.getElementById('tipo_pokemon').value;
+
+    // Captura o valor do input com id "tem_evolucao"
     const tem_evolucao = document.getElementById('tem_evolucao').value;
 
     try {
+        // Envia uma requisição POST para a rota /Inserir
         const response = await fetch(`${api_url}/Inserir`, {
+
+            // Define o método HTTP como POST
             method: 'POST',
+
+            // Define os headers da requisição
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ nome_pokemon, tipo_pokemon, tem_evolucao })
+
+            // Converte os dados JS em JSON e envia no corpo da requisição
+            body: JSON.stringify({ 
+                nome_pokemon, 
+                tipo_pokemon, 
+                tem_evolucao 
+            })
         });
 
+        // Recebe a resposta do servidor como texto
         const data = await response.text();
-        alert(data);  // Exibe a resposta do servidor
+
+        // Mostra a resposta do servidor para o usuário
+        alert(data);
 
     } catch (error) {
+        // Exibe erros no console (ex: servidor offline)
         console.error('Erro', error);
     }
 }
+
+
+// ===============================
+// FUNÇÃO: LISTAR TODOS OS POKÉMONS
+// ===============================
 async function obterUsuarios() {
     try {
+        // Faz requisição GET para a rota /Listar
         const response = await fetch(`${api_url}/Listar`);
 
-        // Verifique se a resposta foi bem-sucedida
+        // Verifica se a resposta NÃO foi bem-sucedida
         if (!response.ok) {
+            // Lança um erro com o status HTTP
             throw new Error(`Erro na requisição: ${response.status}`);
         }
 
-        // Obtenha a resposta como texto para debug
+        // Obtém a resposta como texto (útil para debug)
         const textResponse = await response.text();
-        console.log(textResponse);  // Verifique a resposta no console
 
-        // Tente fazer o parse da resposta
+        // Mostra a resposta bruta no console
+        console.log(textResponse);
+
+        // Converte o texto JSON em objeto JavaScript
         const data = JSON.parse(textResponse);
 
-        // Limpando a tabela antes de preencher
+        // Seleciona o corpo (tbody) da tabela
         const tabelaUsuarios = document.querySelector('#res tbody');
-        tabelaUsuarios.innerHTML = '';  // Limpar dados anteriores da tabela
 
-        // Iterando sobre os dados
+        // Limpa a tabela antes de preencher novamente
+        tabelaUsuarios.innerHTML = '';
+
+        // Percorre cada Pokémon retornado pela API
         data.forEach(pokemon => {
-            // Criar uma nova linha (tr)
+
+            // Cria uma nova linha da tabela
             const tr = document.createElement('tr');
 
-            // Criar células (td) para cada dado do Pokémon
+            // Cria a célula do nome
             const tdNome = document.createElement('td');
-            tdNome.innerText = pokemon.nome_pokemon;  // Nome do Pokémon
+            tdNome.innerText = pokemon.nome_pokemon;
 
+            // Cria a célula do tipo
             const tdTipo = document.createElement('td');
-            tdTipo.innerText = pokemon.tipo_pokemon;  // Tipo do Pokémon
+            tdTipo.innerText = pokemon.tipo_pokemon;
 
+            // Cria a célula informando se tem evolução
             const tdEvolucao = document.createElement('td');
-            tdEvolucao.innerText = pokemon.tem_evolucao;  // Se tem evolução
+            tdEvolucao.innerText = pokemon.tem_evolucao;
 
-            // Adicionar as células à linha
+            // Adiciona as células na linha
             tr.appendChild(tdNome);
             tr.appendChild(tdTipo);
             tr.appendChild(tdEvolucao);
 
-            // Adicionar a linha à tabela
+            // Adiciona a linha na tabela
             tabelaUsuarios.appendChild(tr);
         });
 
     } catch (error) {
+        // Exibe erro no console
         console.error('Erro ao obter dados', error);
     }
 }
 
+
+// ===============================
+// FUNÇÃO: BUSCAR POKÉMON POR ID
+// ===============================
 async function procurarPorId() {
-    const id = document.getElementById('id').value;  // Pega o valor do ID que o usuário digitou
+
+    // Captura o valor digitado no input de ID
+    const id = document.getElementById('id').value;
+
+    // Validação simples: se não tiver ID, avisa o usuário
     if (!id) {
         alert("Por favor, insira um ID válido!");
         return;
     }
 
     try {
+        // Faz requisição GET passando o ID na URL
         const response = await fetch(`${api_url}/Listar/${id}`, {
             method: 'GET'
         });
 
+        // Se a resposta não for OK (ex: 404)
         if (!response.ok) {
-            const errorMessage = await response.text();  // Pega a mensagem de erro do servidor
-            throw new Error(errorMessage);  // Lança o erro com a mensagem do servidor
+            // Captura a mensagem de erro do backend
+            const errorMessage = await response.text();
+
+            // Lança o erro com a mensagem recebida
+            throw new Error(errorMessage);
         }
 
         // Converte a resposta para JSON
         const data = await response.json();
+
+        // Verifica se veio algum Pokémon
         if (data.length > 0) {
-            const pokemon = data[0];  // Pega o primeiro Pokémon da resposta (se houver)
+
+            // Pega o primeiro Pokémon da lista
+            const pokemon = data[0];
+
+            // Seleciona o elemento onde será exibido o resultado
             const saida = document.getElementById('saida');
-            // Exibe as informações de forma mais detalhada
+
+            // Monta o HTML com os dados do Pokémon
             saida.innerHTML = `
                 <h3>Pokémon Encontrado:</h3>
                 <p><strong>ID:</strong> ${pokemon.id}</p><br>
@@ -100,28 +161,44 @@ async function procurarPorId() {
                 <p><strong>Tipo:</strong> ${pokemon.tipo_pokemon}</p><br>
                 <p><strong>Tem Evolução?</strong> ${pokemon.tem_evolucao}</p><br>
             `;
+
         } else {
+            // Caso não encontre nenhum Pokémon
             alert('Pokémon não encontrado!');
         }
 
-
     } catch (error) {
-        console.error('Erro:', error);  // Exibe o erro no console para depuração
-        alert(error.message);  // Exibe a mensagem do erro para o usuário
+        // Exibe o erro no console
+        console.error('Erro:', error);
+
+        // Mostra a mensagem de erro para o usuário
+        alert(error.message);
     }
 }
 
 
+// ===============================
+// FUNÇÃO: DELETAR POKÉMON
+// ===============================
 async function deletarPokemon() {
-    const id = document.getElementById('id').value; // Pega o ID do Pokémon que você quer deletar
+
+    // Captura o ID digitado no input
+    const id = document.getElementById('id').value;
+
     try {
+        // Envia uma requisição DELETE para a rota /Deletar/:id
         const response = await fetch(`${api_url}/Deletar/${id}`, {
             method: 'DELETE'
         });
 
+        // Lê a resposta do servidor como texto
         const data = await response.text();
-        alert(data);  // Mostra a resposta do servidor
+
+        // Exibe a mensagem retornada pelo backend
+        alert(data);
+
     } catch (error) {
+        // Exibe erros no console
         console.error('Erro:', error);
     }
 }
