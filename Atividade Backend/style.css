@@ -73,7 +73,6 @@ button {
     align-items: center;
     border: none;
     border-radius: 10px;
-    background-color: #FF4500;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -81,15 +80,25 @@ button {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-button:hover {
-    background-color: #FF7F50;
-    transform: scale(1.05);
+
+.add{
+ background-color: green;
+}
+.exc{
+   background-color: red;
+}
+.list{
+    background-color: blue;
+}
+.search{
+    background-color: grey;
 }
 
-button:active {
-    background-color: #FF8C00;
-    transform: scale(0.98);
+.add:hover,.exc:hover,.list:hover,.search:hover,.search:hover{
+    font-size: 18px;
+    font-weight: bolder;
 }
+
 
 button img {
     margin-right: 8px;
@@ -148,21 +157,23 @@ table td button:hover {
     background-color: #FF7F50;
 }
 
-.list,
-.exc {
-    background-color: #4CAF50;
+.container-pai{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+#saida {
     color: white;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.8px);
+    -webkit-backdrop-filter: blur(3.8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    width: 50%;
+    font-weight: bolder;
 }
-
-.list:hover {
-    background-color: #45a049;
-}
-
-.exc:hover {
-    background-color: #f44336;
-}
-
-.add:hover {
-    background-color: #45a049;
-}
-
