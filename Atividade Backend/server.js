@@ -28,7 +28,7 @@ app.post('/Inserir', (req, res) => {
     });
 });
 
-app.delete('/Deletar/:id', (req, res) => {  // Corrigido para aceitar o id via parâmetro
+app.delete('/deletar/:id', (req, res) => {  // Corrigido para aceitar o id via parâmetro
     const { id } = req.params;
     const comandoBanco = `DELETE FROM pokemons WHERE id = ?`;  // Corrigido a query
     connection.query(comandoBanco, [id], (erro) => {
@@ -59,6 +59,30 @@ app.get('/Listar/:id', (req, res) => {
         return res.status(200).json(resultados);  // Envia os dados como JSON
     });
 });
+
+app.put('/atualizar/:id', (req, res) => {
+
+    // ID vem da URL
+    const { id } = req.params
+
+    // Nome e email vêm do body
+    const { nome_pokemon,tipo_pokemon, tem_evolucao} = req.body
+
+    const atualizacao = `
+        UPDATE pokemons
+        SET nome_pokemon = ?, tipo_pokemon = ?,tem_evolucao=?
+        WHERE id = ?
+    `
+
+    connection.query(atualizacao, [nome_pokemon,tipo_pokemon,tem_evolucao , id], (erro) => {
+
+        if (erro) {
+            return res.status(500).send("Erro ao tentar atualizar o usuário")
+        }
+
+        res.status(200).send("Usuário atualizado com sucesso!")
+    })
+})
 
 
 const port = 3000;
