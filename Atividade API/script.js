@@ -13,7 +13,7 @@ async function procurarNome() {
     }
     const resposta = await fetch(`${url}/${busca}`)
     const dados = await resposta.json()
-    const tipos = dados.types.map(t => t.type.name).join(" / ")
+    const tipos = dados.types.map(t => t.type.name)
     let saida = document.getElementById("img");
     saida.innerHTML=`ID Pokemom: ${dados.id}<br>Nome Pokemons: <br>${dados.name}<br>Tipo Pokemons: ${tipos}<br> `; 
 
