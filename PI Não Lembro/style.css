@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background: linear-gradient(to left, #0f2027, #203a43, #2c5364);
+}
+
+.menu{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    margin: 10px;
+}
+.menu:hover{
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.container-slide{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 100px;
+    background-color: white;
+    height: 100%;
+    border-radius: 10px;
+}
+.container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    margin: 200px;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;           /* ativa flexbox */
+    flex-wrap: wrap;         /* permite quebrar linha se não couber na tela */
+    gap: 20px;               /* espaço entre os cards */
+    justify-content: center; /* centraliza os cards horizontalmente */
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column; /* conteúdo do card fica em coluna (h1 em cima, p embaixo) */
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 250px;            /* largura fixa do card */
+    padding: 20px;
+    background-color: rgba(255,255,255,0.1); /* fundo leve para destacar */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.box1:hover {
+    transform: translateY(-5px); /* efeito hover */
+}
+
+
+footer{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    margin: 200px;
+}
+
+a{
+    list-style: none;
+    outline: none;
+    text-decoration: none;
+    color: white;
+}
