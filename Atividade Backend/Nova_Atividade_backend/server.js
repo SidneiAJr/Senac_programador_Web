@@ -85,6 +85,33 @@ app.delete('/deletar/:id',(req,res)=>{
     })
 })
 
+app.post('/update/:id', (req, res) => {
+    const id_usuario = parseInt(req.params.id);  // Pegando o ID da URL
+    const { nome_usuario, idade_usuario, email_usuario, senha } = req.body;  // Pegando os dados do corpo da requisição
+
+    // Verifique se os dados necessários estão presentes
+    if (!nome_usuario || !idade_usuario || !email_usuario || !senha) {
+        return res.status(400).send("Todos os campos são obrigatórios!");
+    }
+
+    // Preparando os dados para a query
+    const dadosParaAtualizar = [nome_usuario, idade_usuario, email_usuario, senha, id_usuario];
+
+    const update_id = `UPDATE usuarios SET nome_usuario = ?, idade_usuario = ?, email_usuario = ?, senha = ? WHERE id_usuario = ?`;
+
+    connection.query(update_id, dadosParaAtualizar, (erro, resultados) => {
+        if (erro) {
+            console.error('Erro ao atualizar:', erro);  // Logando o erro
+            return res.status(500).send("Erro ao Atualizar Usuário!");
+        }
+
+        if (resultados.affectedRows === 0) {
+            return res.status(404).send("Usuário não encontrado!");  // Caso não tenha sido encontrado nenhum usuário
+        }
+
+        return res.status(200).send("Usuário Atualizado com Sucesso!");
+    });
+});
 
 
 
