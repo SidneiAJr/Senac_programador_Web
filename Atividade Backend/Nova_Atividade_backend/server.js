@@ -41,10 +41,10 @@ app.get('/users',(req,res)=>{
    })
 })
 
-app.get('/users:id',(req,res)=>{
-    const {id} = req.params;
-    const consulta_id = 'select * from usuarios where id = ?'
-    connection.query(consulta_id,[id],(erro,resultado)=>{
+app.get('/users/:id',(req,res)=>{
+    const id_usuario = parseInt(req.params.id);
+    const consulta_id = 'select * from usuarios where id_usuario = ?'
+    connection.query(consulta_id,[id_usuario],(erro,resultado)=>{
         if(erro){
           return res.status(500).set("Erro ao Selecionar dados");  
         }
@@ -74,7 +74,7 @@ app.post('/Insert',(req,res)=>{
 })
 
 app.delete('/deletar/:id',(req,res)=>{
-    const {id_usuario} = req.params;
+    const id_usuario = parseInt(req.params.id);
     const deletar = `delete from usuarios where id_usuario =?`
     connection.query(deletar,[id_usuario],(erro)=>{
         if(erro){
