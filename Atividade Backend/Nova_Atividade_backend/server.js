@@ -19,7 +19,16 @@ const connection = mysql.createConnection({
     password: 'root',
     database: 'banco_trabalho'
 });
-connection.connect();
+
+dot.config();
+
+connection.connect(error=>{
+    if(error){
+     console.error('Erro ao Conectar!'+error.stack);
+    return;
+    }
+    console.log("Sucesso ao Conectar")
+});
 
 app.post({});
 app.get({});
@@ -32,5 +41,4 @@ app.get({});
 
 
 
-dot.config();
 
