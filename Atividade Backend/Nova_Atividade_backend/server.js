@@ -44,7 +44,7 @@ app.get('/users',(req,res)=>{
 app.get('/users:id',(req,res)=>{
     const {id} = req.params;
     const consulta_id = 'select * from usuarios where id = ?'
-    connection.query(consulta_id,(erro,resultado)=>{
+    connection.query(consulta_id,[id],(erro,resultado)=>{
         if(erro){
           return res.status(500).set("Erro ao Selecionar dados");  
         }
@@ -81,9 +81,11 @@ app.delete('/deletar/:id',(req,res)=>{
             console.error('Erro ao deletar:', erro);  // Log do erro
             return res.status(500).send("Erro ao Apagar Usuario!");
         }
-        return res.status(200).send("Sucesso ao Deletar Usuario");
+        return res.status(200).send("Sucesso ao Deletar Usuario!");
     })
 })
+
+
 
 
 const port = 3000;
