@@ -4,6 +4,7 @@ const mysql = require('mysql2')
 const cors = require('cors')
 const dot = require('dotenv')
 const bodyParser = require('body-parser')
+const bcrypt = require('bcrypt');
 
 //Iniciando express
 const app = express();
@@ -113,15 +114,52 @@ app.put('/update/:id', (req, res) => {
     });
 });
 
+app.post('/Registrar',async(req,res)=>{
+    const { nome_usuario, idade_usuario, email_usuario, senha} = req.body;
+    if(!senha){
+        return res.status(400).send("Senha é Obrigatorio");
+    }
+    try{
+        const saltRounds = 15;
+        const senhahs = await bcrypt.hash(senha,saltRounds);
+        connection.query(
+            'Insert into usuarios (nome_usuario, idade_usuario, email_usuario, senha) values (?,?,?,?)',
+            [nome_usuario, idade_usuario,email_usuario, senhahs],
+            (error)=>{
+                if(error){
+                    res.status(500).send('Erro ao cadastrar usuário');
+                    return;
+                }
+                 res.status(201).send('Usuário cadastrado com sucesso');
+            }
+        )
+    }catch(err){
+         res.status(500).send('Erro ao gerar hash da senha');
+    }
+})
 
+app.post('/loginat',(req,res)=>{
+    const {email_usuario, senha} = req.body;
+    connection.query(
+        'Select * from usuarios where email_usuario = ?',
+        [email_usuario],
+        async(error,results)=>{
+            if(error || results.length===0){
+              return res.status(401).send('Usuário ou senha inválidos');
+            }
+            const usuario = results[0];
+            const senhaValida = await bcrypt.compare(senha, usuario.senha);
+            if (!senhaValida) {
+                return res.status(401).send('Usuário ou senha inválidos');
+            }
+            res.status(200).send('Login realizado com sucesso');
+        }
+    )
+})
 
 const port = 3000;
 app.listen(port,()=>{
     console.log(`Servidor Rodando em http://localhost:${port}`)
 });
-
-
-
-
 
 
