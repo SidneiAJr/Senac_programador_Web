@@ -1,4 +1,16 @@
-// Imports de Libs | JS
+/*
+====================================================
+Importando Libs | Node.js
+====================================================
+Importando Libs:
+- npm install express
+- npm install mysql2
+- npm install cors
+- npm install dot
+- npm install bodyparse
+- npm install bcrypt
+====================================================
+*/
 const express = require('express')
 const mysql = require('mysql2')
 const cors = require('cors')
@@ -14,6 +26,11 @@ app.use(cors());
 
 dot.config();
 const {DB_HOST,DB_DATABASE,DB_PORT,DB_USER,DB_PASSWORD} = process.env;
+/*
+====================================================
+Conexção | Banco com .env
+====================================================
+*/
 
 // Conexção Banco
 const connection = mysql.createConnection({
@@ -31,7 +48,11 @@ connection.connect(error=>{
     }
     console.log("Sucesso ao Conectar")
 });
-
+/*
+====================================================
+Consulta Geral | Banco | Rota de Consulta
+====================================================
+*/
 app.get('/users',(req,res)=>{
    const consulta = `select * from usuarios`;
    connection.query(consulta,(erro,resultados)=>{
@@ -39,8 +60,13 @@ app.get('/users',(req,res)=>{
     return res.status(500).set("Erro ao Selecionar dados");
    }
    return res.status(200).json(resultados);
-   })
-})
+   });
+});
+/*
+====================================================
+Consulta Geral | Banco | Seleciona Usuario por ID
+====================================================
+*/
 
 app.get('/users/:id',(req,res)=>{
     const id_usuario = parseInt(req.params.id);
@@ -50,8 +76,13 @@ app.get('/users/:id',(req,res)=>{
           return res.status(500).set("Erro ao Selecionar dados");  
         }
         return res.status(200).json(resultado[0]);
-    })
-})
+    });
+});
+/*
+====================================================
+Consulta Geral | Banco | Conta quantos Registros tem
+====================================================
+*/
 
 app.get('/Lista',(req,res)=>{
    const consulta_lista = `select count (*) from usuarios`;
@@ -60,8 +91,14 @@ app.get('/Lista',(req,res)=>{
         return res.status(500).set("Erro ao listar usuarios");
     }
     return res.status(200).json(resultados);
-   })
-})
+   });
+});
+
+/*
+=============================================================
+Consulta Geral | Banco | Insere Informação no Banco usuarios
+=============================================================
+*/
 
 app.post('/Insert',(req,res)=>{
     const {nome_usuario,idade_usuario,email_usuario,senha} = req.body;
@@ -71,8 +108,13 @@ app.post('/Insert',(req,res)=>{
             return res.status(500).send("Erro ao Adicionar Usuario!");
         }
         return res.status(201).send("Sucesso ao Adicionar Usuario");
-    })
-})
+    });
+});
+/*
+====================================================
+Consulta Geral | Banco | Deletar por ID
+====================================================
+*/
 
 app.delete('/deletar/:id',(req,res)=>{
     const id_usuario = parseInt(req.params.id);
@@ -83,8 +125,13 @@ app.delete('/deletar/:id',(req,res)=>{
             return res.status(500).send("Erro ao Apagar Usuario!");
         }
         return res.status(200).send("Sucesso ao Deletar Usuario!");
-    })
-})
+    });
+});
+/*
+====================================================
+Consulta Geral | Banco | Update por ID
+====================================================
+*/
 
 app.put('/update/:id', (req, res) => {
     const id_usuario = parseInt(req.params.id);  // Pegando o ID da URL
@@ -114,10 +161,16 @@ app.put('/update/:id', (req, res) => {
     });
 });
 
+/*
+====================================================
+Consulta Geral | Banco | Rota de Registro com HASH
+====================================================
+*/
+
 app.post('/Registrar',async(req,res)=>{
     const { nome_usuario, idade_usuario, email_usuario, senha} = req.body;
-    if(!senha){
-        return res.status(400).send("Senha é Obrigatorio");
+    if(!nome_usuario|| !idade_usuario || !email_usuario|| !senha ){
+        return res.status(400).send("Campos São Obrigatorios");
     }
     try{
         const saltRounds = 15;
@@ -136,8 +189,12 @@ app.post('/Registrar',async(req,res)=>{
     }catch(err){
          res.status(500).send('Erro ao gerar hash da senha');
     }
-})
-
+});
+/*
+========================================================
+Consulta Geral | Banco | Seleciona o Usuario por email
+========================================================
+*/
 app.post('/loginat',(req,res)=>{
     const {email_usuario, senha} = req.body;
     connection.query(
@@ -155,11 +212,21 @@ app.post('/loginat',(req,res)=>{
             res.status(200).send('Login realizado com sucesso');
         }
     )
-})
+});
+
+/*
+====================================================
+Porta do Servidor | Porta : 3000
+====================================================
+*/
 
 const port = 3000;
 app.listen(port,()=>{
     console.log(`Servidor Rodando em http://localhost:${port}`)
 });
+
+
+
+
 
 
