@@ -55,59 +55,37 @@ const idade_usuario = document.getElementById('idade_usuario').value;
 
 async function ListarUsuarios() {
     try {
-        // Faz requisição GET para a rota /Listar
-        const response = await fetch(`${api_url}/users`);
+        const response = await fetch(`${server}/users`);
 
-        // Verifica se a resposta NÃO foi bem-sucedida
         if (!response.ok) {
-            // Lança um erro com o status HTTP
             throw new Error(`Erro na requisição: ${response.status}`);
         }
 
-        // Obtém a resposta como texto (útil para debug)
-        const textResponse = await response.text();
+        const data = await response.json(); // 🔥 pode usar direto
 
-        // Mostra a resposta bruta no console
-        console.log(textResponse);
-
-        // Converte o texto JSON em objeto JavaScript
-        const data = JSON.parse(textResponse);
-
-        // Seleciona o corpo (tbody) da tabela
         const tabelaUsuarios = document.querySelector('#res tbody');
-
-        // Limpa a tabela antes de preencher novamente
         tabelaUsuarios.innerHTML = '';
 
-        // Percorre cada Pokémon retornado pela API
-        data.forEach(pokemon => {
-
-            // Cria uma nova linha da tabela
+        data.forEach(usuario => {
             const tr = document.createElement('tr');
 
-            // Cria a célula do nome
             const tdNome = document.createElement('td');
-            tdNome.innerText = pokemon.nome_pokemon;
+            tdNome.innerText = usuario.nome_usuario;
 
-            // Cria a célula do tipo
-            const tdTipo = document.createElement('td');
-            tdTipo.innerText = pokemon.tipo_pokemon;
+            const tdEmail = document.createElement('td');
+            tdEmail.innerText = usuario.email_usuario;
 
-            // Cria a célula informando se tem evolução
-            const tdEvolucao = document.createElement('td');
-            tdEvolucao.innerText = pokemon.tem_evolucao;
+            const tdIdade = document.createElement('td');
+            tdIdade.innerText = usuario.idade_usuario;
 
-            // Adiciona as células na linha
             tr.appendChild(tdNome);
-            tr.appendChild(tdTipo);
-            tr.appendChild(tdEvolucao);
+            tr.appendChild(tdEmail);
+            tr.appendChild(tdIdade);
 
-            // Adiciona a linha na tabela
             tabelaUsuarios.appendChild(tr);
         });
 
     } catch (error) {
-        // Exibe erro no console
         console.error('Erro ao obter dados', error);
     }
 }
@@ -227,6 +205,24 @@ async function UpdateID() {
 
     } catch (error) {
         // Exibe erro no console
+        console.error('Erro ao obter dados', error);
+    }
+}
+
+async function contador() {
+    try {
+        const response = await fetch(`${server}/Lista`);
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status}`);
+        }
+
+        const data = await response.json(); // já converte direto JSON
+        console.log(data); // ex: [ { total: 5 } ]
+
+        const contadorDiv = document.getElementById('contador');
+        contadorDiv.innerText = `Total de usuários: ${data[0].total}`;
+
+    } catch (error) {
         console.error('Erro ao obter dados', error);
     }
 }
