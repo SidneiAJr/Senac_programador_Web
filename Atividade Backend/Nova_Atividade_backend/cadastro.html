@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar | Usuario</title>
     <script src="api.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 <form>
-    <input type="text" id="nome_usuario" placeholder="nome_usuario">
-    <input type="password" id="senha" placeholder="senha">
+    <h1>Cadastro</h1>
+    <input type="text" id="nome_usuario" placeholder="Nome usuario">
+    <input type="password" id="senha" placeholder="Senha">
     <input type="email" id="email_usuario" placeholder="Email" required>
     <input type="number" id="idade_usuario" placeholder="Idade">
-    <button onclick="cadastrar()">Cadastrar</button>
+    <button class="btn" onclick="cadastrar()">Cadastrar</button>
 </form>
 </body>
 </html>
