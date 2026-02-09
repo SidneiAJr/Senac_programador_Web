@@ -12,7 +12,9 @@ export const conn = mysql.createPool({
    port: parseInt(DB_PORT|| '3306'),
    user: DB_USER,
    password: DB_Password,
-   database:DB_DATABASE
+   database:DB_DATABASE,
+   waitForConnections:true,
+   connectionLimit: 10
 })
 
 
