@@ -1,5 +1,5 @@
 import mysql from "mysql2/promise";
-import ratelimit from "rate-limit";
+import rateLimit from "express-rate-limit";
 
 import { DB_DATABASE } from "./env-config";
 import { DB_PORT } from "./env-config";
@@ -16,6 +16,13 @@ export const conn = mysql.createPool({
    waitForConnections:true,
    connectionLimit: 10
 })
+
+export const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  max: 100, // 100 requisições por IP
+  message: "Muitas requisições, tenta de novo mais tarde"
+});
+
 
 
 
