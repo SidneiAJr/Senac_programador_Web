@@ -1,4 +1,4 @@
-class usuario{
+class Usuario{
     id = parseInt;
     nome = String;
     idade = parseInt;
@@ -6,5 +6,6 @@ class usuario{
     telefone = String;
     email = String;
 }
+
 
 
