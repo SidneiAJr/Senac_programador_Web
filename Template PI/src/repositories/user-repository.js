@@ -1,7 +1,7 @@
 import { conn } from "../config/database.js";
 import { Usuario } from "../models/user.js";
 
-class UsuarioRepository {
+export class UsuarioRepository {
 
     static async findAll() {
         const [results] = await conn.query(
