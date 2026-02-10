@@ -13,12 +13,34 @@ class UsuarioRepository{
         return new usuario(usuario.id,usuario.nome,usuario.idade,usuario.telefone,usuario.email)
     }
     async findName(nome){
-        const [results] = await conn.query('Select * from user where id=?',[nome]);
+        const [results] = await conn.query('Select * from user where nome=?',[nome]);
         if(results.length===0)return null
         const usuario = results[0]
         return new usuario(usuario.id,usuario.nome,usuario.idade,usuario.telefone,usuario.email)
     }
-    
+    async update(id, usuario) {
+    const { nome, idade, telefone, email } = usuario;
+
+    const [result] = await conn.query(
+        `UPDATE user 
+         SET nome = ?, idade = ?, telefone = ?, email = ?
+         WHERE id = ?`,
+        [nome, idade, telefone, email, id]
+    );
+    return result.affectedRows > 0;
+}
+
+async InsertUser(usuario){
+     const {nome,email,senha}=usuario
+     const [result] = await conn.query('Insert into user (nome,email,senha)values(?,?,?)'[nome,email,senha])
+
+}
+
+async deletID(id){
+    const [results] = await conn.query('delete * from user where id=?',[id]);
+    return results.affectedRows > 0;
+}
+
 
 
 
