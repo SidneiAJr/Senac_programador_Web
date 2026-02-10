@@ -3,7 +3,7 @@ import { Usuario } from "../models/user.js";
 
 class UsuarioRepository {
 
-    async findAll() {
+    static async findAll() {
         const [results] = await conn.query(
             'SELECT * FROM user'
         );
@@ -13,7 +13,7 @@ class UsuarioRepository {
         );
     }
 
-    async findID(id) {
+    static async findID(id) {
         const [results] = await conn.query(
             'SELECT * FROM user WHERE id = ?',
             [id]
@@ -25,7 +25,7 @@ class UsuarioRepository {
         return new Usuario(u.id, u.nome, u.idade, u.telefone, u.email);
     }
 
-    async findName(nome) {
+    static async findName(nome) {
         const [results] = await conn.query(
             'SELECT * FROM user WHERE nome = ?',
             [nome]
@@ -37,7 +37,7 @@ class UsuarioRepository {
         return new Usuario(u.id, u.nome, u.idade, u.telefone, u.email);
     }
 
-    async update(id, usuario) {
+    static async update(id, usuario) {
         const { nome, idade, telefone, email } = usuario;
 
         const [result] = await conn.query(
@@ -50,7 +50,7 @@ class UsuarioRepository {
         return result.affectedRows > 0;
     }
 
-    async insert(usuario) {
+    static async insert(usuario) {
         const { nome, idade, telefone, email, senha } = usuario;
 
         const [result] = await conn.query(
@@ -68,7 +68,7 @@ class UsuarioRepository {
         );
     }
 
-    async deleteById(id) {
+    static async deleteById(id) {
         const [result] = await conn.query(
             'DELETE FROM user WHERE id = ?',
             [id]
