@@ -1,10 +1,4 @@
-class Usuario{
-    id = parseInt;
-    nome = String;
-    idade = parseInt;
-    cpf = String;
-    telefone = String;
-    email = String;
+ export class Usuario{
     constructor(id,nome,idade,cpf,telefone,email){
     this.id = id;
     this.nome = nome;
@@ -14,6 +8,8 @@ class Usuario{
     this.email = email;
     }
 }
+
+
 
 
 
