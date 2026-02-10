@@ -32,20 +32,14 @@ class UsuarioRepository{
 
 async InsertUser(usuario){
      const {nome,email,senha}=usuario
-     const [result] = await conn.query('Insert into user (nome,email,senha)values(?,?,?)'[nome,email,senha])
-
+     const [result] = await conn.query('Insert into user (nome,idade,usuario,telefone,email)values(?,?,?,?,?)' ,[nome, idade, telefone, email, senha])
+     return new Usuario(result.insertId,result.nome,result.idade,result.telefone,result.email,result.senha);
 }
 
 async deletID(id){
-    const [results] = await conn.query('delete * from user where id=?',[id]);
+    const [results] = await conn.query('delete from user where id=?',[id]);
     return results.affectedRows > 0;
 }
-
-
-
-
-
-
 }
 
 
