@@ -14,7 +14,7 @@ export class UserController{
        res.status(404).send('Usuario não Encontrado Erro!!!')
        return;
     }
-       res.status(200).json(usuarios);
+       res.status(200).json(usuario);
     }
 
     static async register(req,res){
@@ -24,8 +24,10 @@ export class UserController{
             res.status(400).send("Falta Informação")
             return
         }
-        const Usuario = new Usuario(null,nome,idade,telefone,email)
-        const novoUsuario = await UsuarioRepository.insert(Usuario)
+        const usuario = new Usuario(null,nome,idade,telefone,email)
+        const novoUsuario = await UsuarioRepository.insert(usuario)
+
+        res.status(201).json(novoUsuario)
     }
 
 
