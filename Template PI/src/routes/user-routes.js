@@ -6,5 +6,5 @@ router.get('/user',UserController.index);
 router.get('/user/:id',UserController.findID);
 router.post('/user',UserController.register)
 
-
+export default router
 
