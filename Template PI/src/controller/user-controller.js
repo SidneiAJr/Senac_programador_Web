@@ -39,7 +39,7 @@ export class UserController{
         return res.status(404).send('Usuário não encontrado');
     }
 
-    await UsuarioRepository.delete(ID);
+    await UsuarioRepository.deleteById(ID);
 
     return res.status(204).send(); // 204 = No Content (padrão para delete)
 }
