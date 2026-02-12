@@ -41,7 +41,7 @@ export class UserController{
 
     await UsuarioRepository.deleteById(ID);
 
-    return res.status(204).send(); // 204 = No Content (padrão para delete)
+    return res.status(200).send("Usuario Deletado com Sucesso!"); // 204 = No Content (padrão para delete)
 }
 static async update(req, res) {
     const ID = parseInt(req.params.id);
