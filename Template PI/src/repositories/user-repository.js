@@ -15,7 +15,7 @@ export class UsuarioRepository {
 
     static async findID(id) {
         const [results] = await conn.query(
-            'SELECT * FROM user WHERE id = ?',
+            'SELECT * FROM user WHERE id_usuario = ?',
             [id]
         );
 
@@ -43,7 +43,7 @@ export class UsuarioRepository {
         const [result] = await conn.query(
             `UPDATE user
              SET nome = ?, idade = ?, telefone = ?, email = ?
-             WHERE id = ?`,
+             WHERE id_usuario = ?`,
             [nome, idade, telefone, email, id]
         );
 
@@ -54,9 +54,9 @@ export class UsuarioRepository {
         const { nome, idade, telefone, email, senha } = usuario;
 
         const [result] = await conn.query(
-            `INSERT INTO user (nome, idade, telefone, email, senha)
-             VALUES (?, ?, ?, ?, ?)`,
-            [nome, idade, telefone, email, senha]
+            `INSERT INTO user (nome, idade, telefone, email)
+             VALUES (?, ?, ?, ?)`,
+            [nome, idade, telefone, email]
         );
 
         return new Usuario(
@@ -70,7 +70,7 @@ export class UsuarioRepository {
 
     static async deleteById(id) {
         const [result] = await conn.query(
-            'DELETE FROM user WHERE id = ?',
+            'DELETE FROM user WHERE id_usuario = ?',
             [id]
         );
         return result.affectedRows > 0;
