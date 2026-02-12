@@ -30,6 +30,35 @@ export class UserController{
         res.status(201).json(novoUsuario)
     }
 
+  static async delete(req, res) {
+    const ID = parseInt(req.params.id);
 
-    
+    const usuario = await UsuarioRepository.deleteById(ID);
+
+    if (!usuario) {
+        return res.status(404).send('Usuário não encontrado');
+    }
+
+    await UsuarioRepository.delete(ID);
+
+    return res.status(204).send(); // 204 = No Content (padrão para delete)
 }
+static async update(req, res) {
+    const ID = parseInt(req.params.id);
+    const dados = req.body;
+
+    const usuario = await UsuarioRepository.update(ID,dados);
+
+    if (!usuario) {
+        return res.status(404).send('Usuário não encontrado');
+    }
+
+    await UsuarioRepository.update(ID, dados);
+
+    const usuarioAtualizado = await UsuarioRepository.findID(ID);
+
+    return res.status(200).json(usuarioAtualizado);
+}
+
+}
+    
