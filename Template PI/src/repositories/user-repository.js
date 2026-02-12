@@ -9,7 +9,7 @@ export class UsuarioRepository {
         );
 
         return results.map(u =>
-            new Usuario(u.id, u.nome, u.idade, u.telefone, u.email)
+            new Usuario(u.id, u.nome, u.idade, u.telefone, u.email,u.senha)
         );
     }
 
@@ -22,7 +22,7 @@ export class UsuarioRepository {
         if (results.length === 0) return null;
 
         const u = results[0];
-        return new Usuario(u.id, u.nome, u.idade, u.telefone, u.email);
+        return new Usuario(u.id, u.nome, u.idade, u.telefone, u.email,u.senha);
     }
 
     static async findName(nome) {
@@ -34,17 +34,17 @@ export class UsuarioRepository {
         if (results.length === 0) return null;
 
         const u = results[0];
-        return new Usuario(u.id, u.nome, u.idade, u.telefone, u.email);
+        return new Usuario(u.id, u.nome, u.idade, u.telefone, u.email,u.senha);
     }
 
     static async update(id, usuario) {
-        const { nome, idade, telefone, email } = usuario;
+        const { nome, idade, telefone, email,senha} = usuario;
 
         const [result] = await conn.query(
             `UPDATE user
-             SET nome = ?, idade = ?, telefone = ?, email = ?
+             SET nome = ?, idade = ?, telefone = ?, email = ?, senha=?
              WHERE id_usuario = ?`,
-            [nome, idade, telefone, email, id]
+            [nome, idade, telefone, email, senha,id]
         );
 
         return result.affectedRows > 0;
@@ -54,9 +54,9 @@ export class UsuarioRepository {
         const { nome, idade, telefone, email, senha } = usuario;
 
         const [result] = await conn.query(
-            `INSERT INTO user (nome, idade, telefone, email)
-             VALUES (?, ?, ?, ?)`,
-            [nome, idade, telefone, email]
+            `INSERT INTO user (nome, idade, telefone, email,senha)
+             VALUES (?, ?, ?, ?,?)`,
+            [nome, idade, telefone, email,senha]
         );
 
         return new Usuario(
@@ -64,7 +64,8 @@ export class UsuarioRepository {
             nome,
             idade,
             telefone,
-            email
+            email,
+            senha
         );
     }
 
