@@ -4,39 +4,19 @@ import { UserService } from "../services/user-services.js";
 export class UserController{
 
     static async index(req,res){
-        try{
          const usuarios = await UserService.exibirUsuarios();
          res.status(200).json(usuarios)
-        }catch(error){
-         res.status(404).json({message: error.message})
-        }
     }
 
     static async findID(res,req){
-        const id = parseInt(req.params.id);
-       
-        try{
-            const usuario = await UserService.exibirUsuario(id);
-            res.status(200).json(usuario)
-        }catch(error){
-            let status = 400;
-            if(error.message.includes('Usuario Não Encontrado')){
-              status = 404
-            }
-            res.status(status).send(error.message)
-        }
+        const id = parseInt(req.params.id_usuario);
+        const usuario = await UserService.exibirUsuario(id);
+        res.status(200).json(usuario)
     }
 
     static async register(req,res){
         const {nome, idade, telefone, email,senha} = req.body;
-
-        if(!nome || ! idade || !telefone || !email || !senha){
-            res.status(400).send("Falta Informação")
-            return
-        }
-        const usuario = new Usuario(null,nome,idade,telefone,email,senha)
-        const novoUsuario = await UsuarioRepository.insert(usuario)
-
+        const novoUsuario = await UserService.RegistrarUsuario(nome,idade ,telefone ,email, senha)
         res.status(201).json(novoUsuario)
     }
 
@@ -46,7 +26,7 @@ export class UserController{
     const usuario = await UsuarioRepository.deleteById(ID);
 
     if (!usuario) {
-        return res.status(404).send('Usuário não encontrado');
+        return res.status(error.statusCode).send('Usuário não encontrado');
     }
 
     await UsuarioRepository.deleteById(ID);
@@ -60,7 +40,7 @@ static async update(req, res) {
     const usuario = await UsuarioRepository.update(ID,dados);
 
     if (!usuario) {
-        return res.status(404).send('Usuário não encontrado');
+        return res.status(error.statusCode).send('Usuário não encontrado');
     }
 
     await UsuarioRepository.update(ID, dados);
@@ -69,6 +49,15 @@ static async update(req, res) {
 
     return res.status(200).json(usuarioAtualizado);
 }
+
+static async login(req,res){
+    const {email,senha} = req.body
+    usuarioLogado = await UserService.login(email,senha);
+    res.status(200).json({message: "Usuario Logado com sucesso"})
+}
+
+
+
 
 }
     
