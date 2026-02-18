@@ -71,15 +71,28 @@ export class UserService{
 
       const usuarioExist = await UsuarioRepository.findID(parseInt(id))
 
-      if(!usuario){
+      if(!usuarioExist){
          throw new AppError('Usuario não encontrado',404)
       }
 
+      if(email){
+        const emailExist = await UsuarioRepository.findEmail(email) 
+        if(emailExist){
+           throw new AppError('Ja existe esse email veio!',409)
+        }
+      }
+
       nome = nome ?? usuarioExist.nome
+      email = email ?? usuarioExist.email
+      senha = senha ?? usuarioExist.senha
 
+      const usuarioAtualizado = await UsuarioRepository.update(id,new Usuario(id,nome,email,senha))
 
+      if(!usuarioAtualizado){
+         throw new AppError('Erro ao Atualizar Usuario',500)
+      }
 
-
+      return usuarioAtualizado
 
      
     }
