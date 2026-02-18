@@ -69,13 +69,15 @@ export class UserService{
           throw new AppError('É ncessario informar ao menos um campo para alteração',400)
       }
 
-      const usuario = await UsuarioRepository.findID(parseInt(id))
+      const usuarioExist = await UsuarioRepository.findID(parseInt(id))
 
       if(!usuario){
          throw new AppError('Usuario não encontrado',404)
       }
 
-      
+      nome = nome ?? usuarioExist.nome
+
+
 
 
 
