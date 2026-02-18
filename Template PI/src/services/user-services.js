@@ -60,6 +60,28 @@ export class UserService{
        return Senhachecar
     }
 
+    static async update(id,nome,idade ,telefone ,email, senha){
+      if(isNaN(id)){
+         throw new AppError('ID precisa ser um numero',400)
+      }
+      
+      if(!nome && !email && !senha && !idade && !telefone){
+          throw new AppError('É ncessario informar ao menos um campo para alteração',400)
+      }
+
+      const usuario = await UsuarioRepository.findID(parseInt(id))
+
+      if(!usuario){
+         throw new AppError('Usuario não encontrado',404)
+      }
+
+      
+
+
+
+     
+    }
+
     
 
 
