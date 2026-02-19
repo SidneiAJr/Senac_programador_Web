@@ -24,7 +24,7 @@ export class UserController{
     const id = parseInt(req.params.id);
 
     await UserService.delete(id)
-    res.status(204).send()
+    res.status(204).send("Usuario Não Encontrado | Favor Verificar!")
 }
 
 static async update(req, res) {
@@ -37,8 +37,9 @@ static async update(req, res) {
 
 static async login(req,res){
     const {email,senha} = req.body
-    await UserService.login(email,senha);
-    res.status(200).json({message: "Usuario Logado com sucesso"})
+    const {token} = await UserService.login(email,senha)
+    res.status(200).json({token})
+
 }
 
 
