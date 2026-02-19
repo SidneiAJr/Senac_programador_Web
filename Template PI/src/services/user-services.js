@@ -75,12 +75,11 @@ export class UserService{
          throw new AppError('Usuario não encontrado',404)
       }
 
-      if(email){
-        const emailExist = await UsuarioRepository.findEmail(email) 
-        if(emailExist){
+      const emailExist = await UsuarioRepository.findEmail(email) 
+      if(emailExist){
            throw new AppError('Ja existe esse email veio!',409)
-        }
       }
+      
 
       nome = nome ?? usuarioExist.nome
       email = email ?? usuarioExist.email
@@ -93,9 +92,24 @@ export class UserService{
       }
 
       return usuarioAtualizado
-
-     
     }
+
+    static async delete(id){
+       if(isNaN(id)){
+          throw new AppError('ID precisa ser um numero',400)
+       }
+       const usuario = await UsuarioRepository.findID(parseInt(id))
+       const deleted = await UsuarioRepository.deleteById(id)
+
+       if(!usuario || !deleted){
+         throw new AppError('Usuario Não encontrado! ',404)
+       }
+
+       return 
+
+       
+    }
+
 
     
 
