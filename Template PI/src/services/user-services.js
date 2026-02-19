@@ -1,7 +1,9 @@
+import { JWT_Secret } from "../config/env-config.js";
 import { AppError } from "../errors/error-handle.js";
 import { Usuario } from "../models/user.js";
 import { UsuarioRepository } from "../repositories/user-repository.js";
 import bcrypt, { genSalt } from "bcryptjs";
+import jwt from 'jsonwebtoken'
 
 export class UserService{
     static async exibirUsuarios(){
@@ -57,7 +59,14 @@ export class UserService{
        if(!Senhachecar){
         throw new AppError('Credencias Invalidas',401)
        }
-       return Senhachecar
+      
+       const token = jwt.sign(
+         {id:usuario.id, role: usuario.role}
+       )
+       JWT_Secret,
+       {expiresIn:'1h'}
+
+       return{token}
     }
 
     static async update(id,nome,idade ,telefone ,email, senha){
