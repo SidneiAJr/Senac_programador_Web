@@ -1,5 +1,3 @@
-import { Usuario } from "../models/user.js";
-import { UsuarioRepository } from "../repositories/user-repository.js"
 import { UserService } from "../services/user-services.js";
 export class UserController{
 
