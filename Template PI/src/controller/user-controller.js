@@ -21,38 +21,23 @@ export class UserController{
     }
 
   static async delete(req, res) {
-    const ID = parseInt(req.params.id);
+    const id = parseInt(req.params.id);
 
-    const usuario = await UsuarioRepository.deleteById(ID);
-
-    if (!usuario) {
-        return res.status(error.statusCode).send('Usuário não encontrado');
-    }
-
-    await UsuarioRepository.deleteById(ID);
-
-    return res.status(200).send("Usuario Deletado com Sucesso!"); // 204 = No Content (padrão para delete)
+    await UserService.delete(id)
+    res.status(204).send()
 }
+
 static async update(req, res) {
-    const ID = parseInt(req.params.id);
-    const dados = req.body;
-
-    const usuario = await UsuarioRepository.update(ID,dados);
-
-    if (!usuario) {
-        return res.status(error.statusCode).send('Usuário não encontrado');
-    }
-
-    await UsuarioRepository.update(ID, dados);
-
-    const usuarioAtualizado = await UsuarioRepository.findID(ID);
+    const id = parseInt(req.params.id);
+    const {nome,idade ,telefone ,email, senha} = req.body;
+    const usuarioAtualizado = await UserService.update(id,nome,idade ,telefone ,email, senha)
 
     return res.status(200).json(usuarioAtualizado);
 }
 
 static async login(req,res){
     const {email,senha} = req.body
-    usuarioLogado = await UserService.login(email,senha);
+    await UserService.login(email,senha);
     res.status(200).json({message: "Usuario Logado com sucesso"})
 }
 
