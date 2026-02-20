@@ -19,6 +19,9 @@ async function Login() {
                     senha
                 })
             });
+            if(resposta.ok){
+                window.location.href = "dashboard.html";
+            }
             const data = await resposta.json();
             alert(`Login Realizado Com Sucesso!`);
             alert(`Bem Vindo : ${data.nome}`)
